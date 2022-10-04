@@ -25,6 +25,9 @@ public class TestConflits {
         System.out.println(test2+"test");
         System.out.println(test2+"test"+test);
         System.out.println(test+test3);
+        
+        
+        System.out.println("Test numero 2");
     }
     
 }
