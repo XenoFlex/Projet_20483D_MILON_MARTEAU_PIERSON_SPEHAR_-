@@ -27,10 +27,11 @@ public class TestConflits {
         System.out.println(test+test3);
         
         
-        System.out.println("Test numero 2");
         System.out.println("Test numero Ilan");
         System.out.println("Test de conflit avec Eva");
         System.out.println("Test de conflit avec Alex");
+        
+        System.out.println("Test fusion");
     }
     
 }
