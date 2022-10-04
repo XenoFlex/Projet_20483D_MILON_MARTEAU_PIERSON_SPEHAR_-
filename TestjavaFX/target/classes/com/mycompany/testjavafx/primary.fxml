@@ -21,7 +21,7 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
       </GridPane>
-      <Label text="Primary View" />
+      <Label text="Test Grid Scene builder" />
       <Button fx:id="primaryButton" onAction="#switchToSecondary" text="Switch to Secondary View" />
    </children>
    <padding>
