@@ -18,11 +18,13 @@ public class TestConflits {
         // TODO code application logic here
         
         double test=3.123456789012345678901234567890123456789;
+        int test3 = 8;
         System.out.println(test);
         float test2=(float) test;
         System.out.println(test2+test);
         System.out.println(test2+"test");
         System.out.println(test2+"test"+test);
+        System.out.println(test+test3);
     }
     
 }
