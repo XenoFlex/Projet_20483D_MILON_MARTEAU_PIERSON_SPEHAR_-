@@ -1,4 +1,4 @@
-package com.mycompany.d;
+package Principal;
 
 import java.io.IOException;
 import javafx.fxml.FXML;
