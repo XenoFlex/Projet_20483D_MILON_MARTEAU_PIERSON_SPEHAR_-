@@ -78,7 +78,7 @@
       <Line endX="71.0" endY="-178.40000915527344" layoutX="347.0" layoutY="351.0" opacity="0.1" startX="31.5999755859375" startY="-123.80000305175781" />
       <Line endX="71.0" endY="-178.40000915527344" layoutX="347.0" layoutY="302.0" opacity="0.1" startX="31.5999755859375" startY="-123.80000305175781" />
       <CubicCurve controlX1="92.73458862304688" controlX2="225.39999389648438" controlY1="-29.799999237060547" controlY2="32.99998474121094" endX="448.0" endY="-1.52587890625E-5" fill="#ff461f" layoutX="151.0" layoutY="83.0" startX="-150.0" stroke="BLACK" strokeWidth="2.0" />
-      <CubicCurve controlX1="-121.18461608886719" controlX2="434.01544189453125" controlY1="-34.20001220703125" controlY2="32.20001220703125" endX="556.390380859375" fill="#ff461f" layoutX="146.0" layoutY="327.0" startX="-202.81439208984375" stroke="BLACK" strokeWidth="2.0" />
+      <CubicCurve controlX1="92.73458862304688" controlX2="225.39999389648438" controlY1="-29.799999237060547" controlY2="32.99998474121094" endX="448.0" endY="-1.52587890625E-5" fill="#ff461f" layoutX="151.0" layoutY="317.0" startX="-150.0" stroke="BLACK" strokeWidth="2.0" />
    </children>
    <effect>
       <SepiaTone level="0.14" />
