@@ -1,16 +1,86 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Button?>
-<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.effect.SepiaTone?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.CubicCurve?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.d.PrimaryController">
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label text="Primary View" />
-      <Button fx:id="primaryButton" text="Switch to Secondary View" onAction="#switchToSecondary"/>
+      <GridPane gridLinesVisible="true" layoutX="28.0" layoutY="123.0" prefHeight="154.0" prefWidth="154.0" AnchorPane.bottomAnchor="122.6" AnchorPane.leftAnchor="28.0" AnchorPane.rightAnchor="417.6" AnchorPane.topAnchor="123.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="108.79998779296875" minWidth="10.0" prefWidth="99.2000244140625" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="101.59997558593751" minWidth="10.0" prefWidth="101.59997558593751" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="101.59997558593751" minWidth="10.0" prefWidth="101.59997558593751" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="60.8" minHeight="10.0" prefHeight="47.59999389648438" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="56.80000610351563" minHeight="0.0" prefHeight="51.600006103515625" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="55.99999389648437" minHeight="10.0" prefHeight="54.399987792968744" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <effect>
+            <ColorAdjust />
+         </effect>
+      </GridPane>
+      <GridPane gridLinesVisible="true" layoutX="223.0" layoutY="123.0" prefHeight="154.0" prefWidth="154.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="108.79998779296875" minWidth="10.0" prefWidth="99.2000244140625" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="101.59997558593751" minWidth="10.0" prefWidth="101.59997558593751" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="101.59997558593751" minWidth="10.0" prefWidth="101.59997558593751" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints maxHeight="60.8" minHeight="10.0" prefHeight="49.80000610351563" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="60.80000610351563" minHeight="0.0" prefHeight="51.399993896484375" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="52.00000610351563" minHeight="10.0" prefHeight="52.00000610351563" vgrow="SOMETIMES" />
+         </rowConstraints>
+      </GridPane>
+      <GridPane gridLinesVisible="true" layoutX="418.0" layoutY="123.0" prefHeight="154.0" prefWidth="154.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="108.79998779296875" minWidth="10.0" prefWidth="99.2000244140625" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="101.59997558593751" minWidth="10.0" prefWidth="101.59997558593751" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="101.59997558593751" minWidth="10.0" prefWidth="101.59997558593751" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints maxHeight="60.8" minHeight="10.0" prefHeight="50.199981689453125" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="59.99998779296875" minHeight="0.0" prefHeight="50.20001831054688" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="54.00000610351563" minHeight="10.0" prefHeight="50.79999389648438" vgrow="SOMETIMES" />
+         </rowConstraints>
+      </GridPane>
+      <Label layoutX="234.0" layoutY="13.0" text="2048  3D">
+         <font>
+            <Font name="Dosis Regular" size="36.0" />
+         </font>
+      </Label>
+      <Label layoutX="174.0" layoutY="378.0" text="Un projet de Eva SPEHAR, Ilan MARTEAU, Alexandre PIERSON et Jean-Baptiste MILON   ">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Label>
+      <Label layoutY="378.0" text="MIASHS Sciences Co - S5">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Label>
+      <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" text="Score Actuel :       " />
+      <Button layoutX="473.0" layoutY="14.0" mnemonicParsing="false" text="High Score :          " />
+      <Line endX="71.0" endY="-178.40000915527344" layoutX="152.0" layoutY="400.0" opacity="0.1" startX="31.5999755859375" startY="-123.80000305175781" />
+      <Line endX="71.0" endY="-178.40000915527344" layoutX="151.0" layoutY="351.0" opacity="0.1" startX="31.5999755859375" startY="-123.80000305175781" />
+      <Line endX="71.0" endY="-178.40000915527344" layoutX="151.0" layoutY="302.0" opacity="0.1" startX="31.5999755859375" startY="-123.80000305175781" />
+      <Line endX="71.0" endY="-178.40000915527344" layoutX="348.0" layoutY="400.0" opacity="0.1" startX="31.5999755859375" startY="-123.80000305175781" />
+      <Line endX="71.0" endY="-178.40000915527344" layoutX="347.0" layoutY="351.0" opacity="0.1" startX="31.5999755859375" startY="-123.80000305175781" />
+      <Line endX="71.0" endY="-178.40000915527344" layoutX="347.0" layoutY="302.0" opacity="0.1" startX="31.5999755859375" startY="-123.80000305175781" />
+      <CubicCurve controlX1="92.73458862304688" controlX2="225.39999389648438" controlY1="-29.799999237060547" controlY2="32.99998474121094" endX="448.0" endY="-1.52587890625E-5" fill="#ff461f" layoutX="151.0" layoutY="83.0" startX="-150.0" stroke="BLACK" strokeWidth="2.0" />
+      <CubicCurve controlX1="-121.18461608886719" controlX2="434.01544189453125" controlY1="-34.20001220703125" controlY2="32.20001220703125" endX="556.390380859375" fill="#ff461f" layoutX="146.0" layoutY="327.0" startX="-202.81439208984375" stroke="BLACK" strokeWidth="2.0" />
    </children>
-   <padding>
-      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-   </padding>
-</VBox>
+   <effect>
+      <SepiaTone level="0.14" />
+   </effect>
+</AnchorPane>
