@@ -59,12 +59,12 @@
             <Font name="Dosis Regular" size="36.0" />
          </font>
       </Label>
-      <Label layoutX="174.0" layoutY="378.0" text="Un projet de Eva SPEHAR, Ilan MARTEAU, Alexandre PIERSON et Jean-Baptiste MILON   ">
+      <Label layoutX="160.0" layoutY="370.0" text="Un projet de Eva SPEHAR, Ilan MARTEAU, Alexandre PIERSON et Jean-Baptiste MILON   ">
          <font>
             <Font size="11.0" />
          </font>
       </Label>
-      <Label layoutY="378.0" text="MIASHS Sciences Co - S5">
+      <Label layoutX="14.0" layoutY="370.0" text="MIASHS Sciences Co - S5">
          <font>
             <Font size="11.0" />
          </font>
@@ -77,8 +77,8 @@
       <Line endX="71.0" endY="-178.40000915527344" layoutX="348.0" layoutY="400.0" opacity="0.1" startX="31.5999755859375" startY="-123.80000305175781" />
       <Line endX="71.0" endY="-178.40000915527344" layoutX="347.0" layoutY="351.0" opacity="0.1" startX="31.5999755859375" startY="-123.80000305175781" />
       <Line endX="71.0" endY="-178.40000915527344" layoutX="347.0" layoutY="302.0" opacity="0.1" startX="31.5999755859375" startY="-123.80000305175781" />
-      <CubicCurve controlX1="92.73458862304688" controlX2="225.39999389648438" controlY1="-29.799999237060547" controlY2="32.99998474121094" endX="448.0" endY="-1.52587890625E-5" fill="#ff461f" layoutX="151.0" layoutY="83.0" startX="-150.0" stroke="BLACK" strokeWidth="2.0" />
-      <CubicCurve controlX1="92.73458862304688" controlX2="225.39999389648438" controlY1="-29.799999237060547" controlY2="32.99998474121094" endX="448.0" endY="-1.52587890625E-5" fill="#ff461f" layoutX="151.0" layoutY="317.0" startX="-150.0" stroke="BLACK" strokeWidth="2.0" />
+      <CubicCurve controlX1="92.73458862304688" controlX2="225.39999389648438" controlY1="-29.799999237060547" controlY2="32.99998474121094" endX="423.56414794921875" fill="#ff461f" layoutX="163.0" layoutY="70.0" startX="-150.0" stroke="BLACK" strokeWidth="2.0" />
+      <CubicCurve controlX1="92.73458862304688" controlX2="225.39999389648438" controlY1="-29.799999237060547" controlY2="32.99998474121094" endX="423.56414794921875" fill="#ff461f" layoutX="163.0" layoutY="325.0" startX="-150.0" stroke="BLACK" strokeWidth="2.0" />
    </children>
    <effect>
       <SepiaTone level="0.14" />
