@@ -11,4 +11,25 @@ package JeuConsole;
  */
 public class Grille {
     
+    private int[][] grille;
+    
+
+    public int[][] getGrille() {
+        return grille;
+    }
+
+    public void setGrille(int[][] grille) {
+        this.grille = grille;
+    }
+
+    @Override
+    public String toString() {
+        return "Grille{" + "grille=" + grille + '}';
+    }
+    
+    
+   
+    
+    
+    
 }
