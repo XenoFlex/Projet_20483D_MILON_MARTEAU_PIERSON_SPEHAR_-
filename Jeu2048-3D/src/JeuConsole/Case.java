@@ -11,8 +11,10 @@ package JeuConsole;
  */
 public class Case implements Parametres {
 
-    private int x, y, valeur;
+    private int x, y, z, valeur;
     private Grille grille;
+
+    
 
     public Case(int abs, int ord, int v) {
         this.x = abs;
@@ -38,6 +40,14 @@ public class Case implements Parametres {
 
     public void setY(int y) {
         this.y = y;
+    }
+    
+    public int getZ() {
+        return z;
+    }
+
+    public void setZ(int z) {
+        this.z = z;
     }
 
     public void setValeur(int valeur) {

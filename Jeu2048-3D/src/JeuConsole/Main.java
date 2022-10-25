@@ -5,46 +5,75 @@
  */
 package JeuConsole;
 
+import java.util.Scanner;
+
 /**
  *
  * @author ALEX
  */
-public class Main {
+public class Main implements Parametres {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
-        int[][] g1 = new int[3][3];
-        int[][] g2 =  new int[3][3];
-        int[][] g3 =  new int[3][3];
+      Grille g = new Grille();
+        boolean b = g.nouvelleCase();
+        b = g.nouvelleCase();
+        System.out.println(g);
+        Scanner sc = new Scanner(System.in);
+        /*System.out.println("X:");
+        int x= sc.nextInt();
+        System.out.println("Y:");
+        int y= sc.nextInt();
+        System.out.println("Valeur:");
+        int valeur= sc.nextInt();
+        Case c = new Case(x,y,valeur);
+        g.getGrille().remove(c);
+        System.out.println(g);*/
         
-        
-        
-    }
-    
-    public static void affichage(int[][] g) {
-        
-        for (int i=0;i<3;i++){
-            for (int j=0; j<3; j++) {
-                System.out.print(g[i][j]);
-            }
-            System.out.println(" ");
-        }
-        
-    }
-    
-    public static void déplacementSimple (int [][] g, String direction) {
-        if (direction=="gauche") {
-            for (int i=0; i<3; i++) {
-                if ((g[i][0]==0) && (g[i][1]==0)) {
-                    g[i][0]=g[i][2];
-                    g[i][2]=0;
+        while (!g.partieFinie()) {
+            System.out.println("Déplacer vers la Droite (d), Gauche (g), Haut (h), ou Bas (b) ?");
+            String s = sc.nextLine();
+            s.toLowerCase();
+            if (!(s.equals("d") || s.equals("droite")
+                    || s.equals("g") || s.equals("gauche")
+                    || s.equals("h") || s.equals("haut")
+                    || s.equals("b") || s.equals("bas"))) {
+                System.out.println("Vous devez écrire d pour Droite, g pour Gauche, h pour Haut ou b pour Bas");
+            } else {
+                int direction;
+                if (s.equals("d") || s.equals("droite")) {
+                    direction = DROITE;
+                } else if (s.equals("g") || s.equals("gauche")) {
+                    direction = GAUCHE;
+                } else if (s.equals("h") || s.equals("haut")) {
+                    direction = HAUT;
                 } else {
-                    
+                    direction = BAS;
                 }
+                boolean b2 = g.lanceurDeplacerCases(direction);
+                if (b2) {
+                    b = g.nouvelleCase();
+                    if (!b) g.gameOver();
+                }
+                System.out.println(g);
+                if (g.getValeurMax()>=OBJECTIF) g.victory();
             }
         }
-    }     
+        g.gameOver();
+        /*
+        // Bout de code pour tester manuellement si une grille contient une case ou pas
+        Scanner sc = new Scanner(System.in);
+        System.out.println("x :");
+        int x = sc.nextInt();
+        System.out.println("y :");
+        int y = sc.nextInt();
+        Case c = new Case(x, y, 2);
+        Case c2 = new Case(x, y, 4);
+        System.out.println("test1=" + g.getGrille().contains(c));
+        System.out.println("test2=" + g.getGrille().contains(c2));
+         */
+    } 
 }
+        
