@@ -18,9 +18,18 @@ public class Main implements Parametres {
      */
     public static void main(String[] args) {
       Grille g = new Grille();
+      Grille g2 = new Grille();
+      Grille g3 = new Grille();
         boolean b = g.nouvelleCase();
+        boolean bb = g2.nouvelleCase();
+        boolean bbb = g3.nouvelleCase();
         b = g.nouvelleCase();
+        bb = g2.nouvelleCase();
+        bbb = g3.nouvelleCase();
         System.out.println(g);
+        System.out.println(g2);
+        System.out.println(g3);
+        
         Scanner sc = new Scanner(System.in);
         /*System.out.println("X:");
         int x= sc.nextInt();
