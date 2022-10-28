@@ -5,6 +5,7 @@
  */
 package JeuConsole;
 
+import java.util.Random;
 import java.util.Scanner;
 
 /**
@@ -42,24 +43,45 @@ public class Main implements Parametres {
         System.out.println(g);*/
         
         while (!g.partieFinie()) {
-            System.out.println("Déplacer vers la Droite (d), Gauche (g), Haut (h), ou Bas (b) ?");
+            System.out.println("Déplacer vers la Droite (d), Gauche (g), Haut (h), Bas (b), Random (r) ?");
             String s = sc.nextLine();
             s.toLowerCase();
             if (!(s.equals("d") || s.equals("droite")
                     || s.equals("g") || s.equals("gauche")
                     || s.equals("h") || s.equals("haut")
-                    || s.equals("b") || s.equals("bas"))) {
+                    || s.equals("b") || s.equals("bas")
+                    || s.equals("r") || s.equals("random"))) {
                 System.out.println("Vous devez écrire d pour Droite, g pour Gauche, h pour Haut ou b pour Bas");
             } else {
-                int direction;
+                int direction = DROITE;
                 if (s.equals("d") || s.equals("droite")) {
                     direction = DROITE;
                 } else if (s.equals("g") || s.equals("gauche")) {
                     direction = GAUCHE;
                 } else if (s.equals("h") || s.equals("haut")) {
                     direction = HAUT;
-                } else {
+                } else if (s.equals("b") || s.equals("bas")){
                     direction = BAS;
+                } else if (s.equals("r") || s.equals("random")){
+                    Random rand = new Random();
+                    int randomNum = rand.nextInt((4 - 1)+1) + 1;
+                    switch(randomNum){
+                        case 1:
+                            direction = DROITE;
+                            
+                        case 2:
+                            direction = GAUCHE;
+                            
+                        case 3:
+                            direction = HAUT;
+                            
+                        case 4:
+                            direction = BAS;
+                            
+                        default:
+                            direction = BAS;
+                    }
+                    
                 }
                 boolean b2 = g.lanceurDeplacerCases(direction);
                 if (b2) {
