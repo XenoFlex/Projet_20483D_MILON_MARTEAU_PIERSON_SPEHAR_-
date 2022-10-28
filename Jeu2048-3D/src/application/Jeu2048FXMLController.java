@@ -7,7 +7,10 @@ package application;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.input.MouseEvent;
 
 /**
  * FXML Controller class
@@ -23,6 +26,22 @@ public class Jeu2048FXMLController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         
+    }
+
+    @FXML
+    private void handleButtonAction(MouseEvent event) {
+        System.out.println("Clic de souris sur le bouton menu");
     }    
+    
+    @FXML
+    public void keyPressed(KeyEvent ke) {
+        System.out.println("touche appuyée");
+        String touche = ke.getText();
+        if (touche.compareTo("q") == 0) { // utilisateur appuie sur "q" pour envoyer la tuile vers la gauche
+
+        } else if (touche.compareTo("d") == 0) { // utilisateur appuie sur "d" pour envoyer la tuile vers la droite
+
+        }
+    }
     
 }
