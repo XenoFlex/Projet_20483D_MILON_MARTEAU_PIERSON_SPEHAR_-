@@ -63,12 +63,25 @@ public class Main implements Parametres {
                     direction = BAS;
                 }
                 boolean b2 = g.lanceurDeplacerCases(direction);
-                if (b2) {
+                boolean b3 = g2.lanceurDeplacerCases(direction);
+                boolean b4 = g3.lanceurDeplacerCases(direction);
+                if (b2 && b3 && b4) {
                     b = g.nouvelleCase();
-                    if (!b) g.gameOver();
+                    bb = g.nouvelleCase();
+                    bbb = g.nouvelleCase();
+                    if (!(b && bb && bbb)) {
+                        g.gameOver();
+                        g2.gameOver();
+                        g3.gameOver();
+                    }
                 }
                 System.out.println(g);
-                if (g.getValeurMax()>=OBJECTIF) g.victory();
+                System.out.println(g2);
+                System.out.println(g3);
+                
+                if ((g.getValeurMax()>=OBJECTIF) || (g2.getValeurMax()>OBJECTIF) || (g3.getValeurMax()>=OBJECTIF)) {
+                    g.victory();
+                        }
             }
         }
         g.gameOver();
