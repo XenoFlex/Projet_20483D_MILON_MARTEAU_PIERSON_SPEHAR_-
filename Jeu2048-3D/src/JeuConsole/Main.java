@@ -119,5 +119,14 @@ public class Main implements Parametres {
         System.out.println("test2=" + g.getGrille().contains(c2));
          */
     } 
+    
+    
+    
+    public static void deplacementParticulier(Grille g, Grille g2, Grille g3, String direction) {
+        
+        
+        
+        
+    }
 }
         
