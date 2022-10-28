@@ -65,22 +65,26 @@ public class Main implements Parametres {
                 } else if (s.equals("r") || s.equals("random")){
                     Random rand = new Random();
                     int randomNum = rand.nextInt((4 - 1)+1) + 1;
+                    System.out.println(randomNum);
                     switch(randomNum){
                         case 1:
                             direction = DROITE;
+                            break;
                             
                         case 2:
                             direction = GAUCHE;
+                            break;
                             
                         case 3:
                             direction = HAUT;
+                            break;
                             
                         case 4:
                             direction = BAS;
+                            break;
                             
-                        default:
-                            direction = BAS;
                     }
+                    System.out.println(direction);
                     
                 }
                 boolean b2 = g.lanceurDeplacerCases(direction);
