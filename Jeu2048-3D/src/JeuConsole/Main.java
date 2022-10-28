@@ -56,9 +56,9 @@ public class Main implements Parametres {
                 int direction = DROITE;
                 if (s.equals("d") || s.equals("droite")) {
                     direction = DROITE;
-                } else if (s.equals("g") || s.equals("gauche")) {
+                } else if (s.equals("q") || s.equals("gauche")) {
                     direction = GAUCHE;
-                } else if (s.equals("h") || s.equals("haut")) {
+                } else if (s.equals("z") || s.equals("haut")) {
                     direction = HAUT;
                 } else if (s.equals("b") || s.equals("bas")){
                     direction = BAS;
@@ -84,12 +84,25 @@ public class Main implements Parametres {
                     
                 }
                 boolean b2 = g.lanceurDeplacerCases(direction);
-                if (b2) {
+                boolean b3 = g2.lanceurDeplacerCases(direction);
+                boolean b4 = g3.lanceurDeplacerCases(direction);
+                if (b2 && b3 && b4) {
                     b = g.nouvelleCase();
-                    if (!b) g.gameOver();
+                    bb = g2.nouvelleCase();
+                    bbb = g3.nouvelleCase();
+                    if (!(b && bb && bbb)) {
+                        g.gameOver();
+                        g2.gameOver();
+                        g3.gameOver();
+                    }
                 }
                 System.out.println(g);
-                if (g.getValeurMax()>=OBJECTIF) g.victory();
+                System.out.println(g2);
+                System.out.println(g3);
+                
+                if ((g.getValeurMax()>=OBJECTIF) || (g2.getValeurMax()>OBJECTIF) || (g3.getValeurMax()>=OBJECTIF)) {
+                    g.victory();
+                        }
             }
         }
         g.gameOver();
