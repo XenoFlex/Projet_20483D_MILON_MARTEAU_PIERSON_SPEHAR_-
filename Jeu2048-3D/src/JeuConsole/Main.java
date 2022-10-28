@@ -43,13 +43,13 @@ public class Main implements Parametres {
         System.out.println(g);*/
         
         while (!g.partieFinie()) {
-            System.out.println("Déplacer vers la Droite (d), Gauche (g), Haut (h), Bas (b), Random (r) ?");
+            System.out.println("Déplacer vers la Droite (d), Gauche (q), Haut (z), Bas (s), Random (r) ?");
             String s = sc.nextLine();
             s.toLowerCase();
             if (!(s.equals("d") || s.equals("droite")
-                    || s.equals("g") || s.equals("gauche")
-                    || s.equals("h") || s.equals("haut")
-                    || s.equals("b") || s.equals("bas")
+                    || s.equals("q") || s.equals("gauche")
+                    || s.equals("z") || s.equals("haut")
+                    || s.equals("s") || s.equals("bas")
                     || s.equals("r") || s.equals("random"))) {
                 System.out.println("Vous devez écrire d pour Droite, g pour Gauche, h pour Haut ou b pour Bas");
             } else {
@@ -60,7 +60,7 @@ public class Main implements Parametres {
                     direction = GAUCHE;
                 } else if (s.equals("z") || s.equals("haut")) {
                     direction = HAUT;
-                } else if (s.equals("b") || s.equals("bas")){
+                } else if (s.equals("s") || s.equals("bas")){
                     direction = BAS;
                 } else if (s.equals("r") || s.equals("random")){
                     Random rand = new Random();
