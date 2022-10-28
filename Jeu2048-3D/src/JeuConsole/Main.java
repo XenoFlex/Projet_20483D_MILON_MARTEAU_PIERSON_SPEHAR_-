@@ -67,8 +67,8 @@ public class Main implements Parametres {
                 boolean b4 = g3.lanceurDeplacerCases(direction);
                 if (b2 && b3 && b4) {
                     b = g.nouvelleCase();
-                    bb = g.nouvelleCase();
-                    bbb = g.nouvelleCase();
+                    bb = g2.nouvelleCase();
+                    bbb = g3.nouvelleCase();
                     if (!(b && bb && bbb)) {
                         g.gameOver();
                         g2.gameOver();
