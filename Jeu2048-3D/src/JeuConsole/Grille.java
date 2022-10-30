@@ -216,4 +216,36 @@ public class Grille implements Parametres {
             return false;
         }
     }
-}
+
+    public int size() {
+        
+        return this.grille.size();
+    }
+    
+    public int[][] tab() {
+        
+        int[][] tableau = new int[TAILLE][TAILLE];
+        for (Case c : this.grille) {
+            tableau[c.getY()][c.getX()] = c.getValeur();
+        }
+        return tableau;
+    }
+    
+    public void modifCase (int[][] tab) {
+        
+        int i=0,j=0;
+        
+        for (Case c : this.grille) { 
+                    while (!(c.getX()==i && c.getY()==j)) {
+                        if (i<2) {
+                           i++;
+                        } else if (i>=2) {
+                           j++;
+                        }
+                    }
+                    c.setValeur(tab[i][j]);
+                }
+            }
+   }
+    
+

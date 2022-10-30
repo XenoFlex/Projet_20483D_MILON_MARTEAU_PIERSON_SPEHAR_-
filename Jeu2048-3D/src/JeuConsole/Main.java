@@ -43,17 +43,20 @@ public class Main implements Parametres {
         System.out.println(g);*/
         
         while (!g.partieFinie()) {
-            System.out.println("Déplacer vers la Droite (d), Gauche (q), Haut (z), Bas (s), Random (r) ?");
+            System.out.println("Déplacer vers la Droite (d), Gauche (q), Haut (z), Bas (s), Random (w), Inferieur (f), Superieur(r) ?");
             String s = sc.nextLine();
             s.toLowerCase();
             if (!(s.equals("d") || s.equals("droite")
                     || s.equals("q") || s.equals("gauche")
                     || s.equals("z") || s.equals("haut")
                     || s.equals("s") || s.equals("bas")
-                    || s.equals("r") || s.equals("random"))) {
+                    || s.equals("w") || s.equals("random")
+                    || s.equals("f")  || s.equals("inferieur")
+                    || s.equals("r")  || s.equals("superieur"))) {
                 System.out.println("Vous devez écrire d pour Droite, g pour Gauche, h pour Haut ou b pour Bas");
             } else {
                 int direction = DROITE;
+                String directionParticuliere = "Aucune";
                 if (s.equals("d") || s.equals("droite")) {
                     direction = DROITE;
                 } else if (s.equals("q") || s.equals("gauche")) {
@@ -62,7 +65,7 @@ public class Main implements Parametres {
                     direction = HAUT;
                 } else if (s.equals("s") || s.equals("bas")){
                     direction = BAS;
-                } else if (s.equals("r") || s.equals("random")){
+                } else if (s.equals("w") || s.equals("random")){
                     Random rand = new Random();
                     int randomNum = rand.nextInt((4 - 1)+1) + 1;
                     System.out.println(randomNum);
@@ -84,9 +87,12 @@ public class Main implements Parametres {
                             break;
                             
                     }
-                    System.out.println(direction);
-                    
+                } else if (s.equals("f") || s.equals("Inferieur")) {
+                    directionParticuliere="INFERIEUR";
+                } else if (s.equals("r") || s.equals("Superieur")) {
+                    directionParticuliere="SUPERIEUR";
                 }
+                if ("Aucune".equals(directionParticuliere)) {
                 boolean b2 = g.lanceurDeplacerCases(direction);
                 boolean b3 = g2.lanceurDeplacerCases(direction);
                 boolean b4 = g3.lanceurDeplacerCases(direction);
@@ -100,11 +106,16 @@ public class Main implements Parametres {
                         g3.gameOver();
                     }
                 }
+                } else {
+                    deplacementParticulier(g,g2,g3,directionParticuliere);
+                    
+                }
+                
                 System.out.println(g);
                 System.out.println(g2);
                 System.out.println(g3);
                 
-                if ((g.getValeurMax()>=OBJECTIF) || (g2.getValeurMax()>OBJECTIF) || (g3.getValeurMax()>=OBJECTIF)) {
+                if ((g.getValeurMax()>=OBJECTIF) || (g2.getValeurMax()>=OBJECTIF) || (g3.getValeurMax()>=OBJECTIF)) {
                     g.victory();
                         }
             }
@@ -128,9 +139,68 @@ public class Main implements Parametres {
     
     public static void deplacementParticulier(Grille g, Grille g2, Grille g3, String direction) {
         
+        int[][] gTab = new int[TAILLE][TAILLE];
+        int[][] g2Tab = new int[TAILLE][TAILLE];
+        int[][] g3Tab = new int[TAILLE][TAILLE];
         
         
+        gTab = g.tab();
+        g2Tab = g2.tab();
+        g3Tab = g3.tab();
+
         
+        if (direction == "INFERIEUR") {
+            for (int i=0; i<3; i++) {
+                for (int j=0; i<3; i++) {
+                  if ((g3Tab[i][j]==0) && (g2Tab[i][j]==0)) {
+                      g3Tab[i][j] = gTab[i][j];
+                      gTab[i][j] = 0;
+                      System.out.println("Cas 1");
+                  } else if (g3Tab[i][j]==0) {
+                      g3Tab[i][j] = g2Tab[i][j];
+                      g2Tab[i][j] = gTab[i][j];
+                      gTab[i][j] = 0;     
+                      System.out.println("Cas 2");
+                  } else if (g3Tab[i][j] == g2Tab[i][j]) {
+                      g3Tab[i][j] = g3Tab[i][j]*2;
+                      g2Tab[i][j] = gTab[i][j];
+                      gTab[i][j] = 0;
+                      System.out.println("Cas 3");
+                  } else if (g2Tab[i][j] == gTab[i][j]) {
+                      g2Tab[i][j] = g2Tab[i][j]*2;
+                      gTab[i][j] = 0;
+                      System.out.println("Cas 4");
+                  }
+                }
+            }
+        }
+        
+        if (direction == "SUPERIEUR") {
+            for (int i=0; i<TAILLE; i++) {
+                for (int j=0; i<TAILLE; i++) {
+                  if ((gTab[i][j]==0) && (g2Tab[i][j]==0)) {
+                      gTab[i][j] = g3Tab[i][j];
+                      g3Tab[i][j] = 0;
+                  } else if (gTab[i][j]==0) {
+                      gTab[i][j] = g2Tab[i][j];
+                      g2Tab[i][j] = g3Tab[i][j];
+                      g3Tab[i][j] = 0;     
+                  } else if (gTab[i][j] == g2Tab[i][j]) {
+                      gTab[i][j] = gTab[i][j]*2;
+                      g2Tab[i][j] = g3Tab[i][j];
+                      g3Tab[i][j] = 0;
+                  } else if (g2Tab[i][j] == g3Tab[i][j]) {
+                      g2Tab[i][j] = g2Tab[i][j]*2;
+                      g3Tab[i][j] = 0;
+                  }
+                }
+            }
+        }
+       
+        g.modifCase(gTab);
+        g2.modifCase(g2Tab);
+        g3.modifCase(g3Tab); 
+
     }
 }
         
