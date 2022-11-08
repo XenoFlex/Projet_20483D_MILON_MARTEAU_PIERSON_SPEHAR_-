@@ -42,10 +42,11 @@ public class Main implements Parametres {
         g.getGrille().remove(c);
         System.out.println(g);*/
         
-        while (!g.partieFinie()) {
+        while (!g.partieFinie()) {      // tant que la partie n'est pas finie 
             System.out.println("Déplacer vers la Droite (d), Gauche (q), Haut (z), Bas (s), Random (w), Inferieur (f), Superieur(r) ?");
-            String s = sc.nextLine();
+            String s = sc.nextLine();       
             s.toLowerCase();
+            //si la lettre rentrée ne correspond pas aux lettres possibles, un message d'erreur s'affiche
             if (!(s.equals("d") || s.equals("droite")
                     || s.equals("q") || s.equals("gauche")
                     || s.equals("z") || s.equals("haut")
@@ -53,8 +54,8 @@ public class Main implements Parametres {
                     || s.equals("w") || s.equals("random")
                     || s.equals("f")  || s.equals("inferieur")
                     || s.equals("r")  || s.equals("superieur"))) {
-                System.out.println("Vous devez écrire d pour Droite, g pour Gauche, h pour Haut ou b pour Bas");
-            } else {
+                System.out.println("Vous devez écrire d pour Droite, g pour Gauche, h pour Haut, b pour Bas, f pour inférieur et r pour supérieur");
+            } else {    //s'il n'y a pas d'erreur
                 int direction = DROITE;
                 if (s.equals("d") || s.equals("droite")) {
                     direction = DROITE;

@@ -9,6 +9,8 @@ package JeuConsole;
  *
  * @author ALEX
  */
+
+//déclaration des constantes
 public interface Parametres {
     static final int HAUT = 1;
     static final int DROITE = 2;
