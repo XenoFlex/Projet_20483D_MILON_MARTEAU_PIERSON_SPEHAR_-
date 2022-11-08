@@ -19,8 +19,8 @@
       <Line endX="71.0" endY="-178.40000915527344" layoutX="161.0" layoutY="312.0" opacity="0.1" startX="31.5999755859375" startY="-123.80000305175781" />
       <Line endX="71.0" endY="-178.40000915527344" layoutX="161.0" layoutY="361.0" opacity="0.1" startX="31.5999755859375" startY="-123.80000305175781" />
       <Line endX="71.0" endY="-178.40000915527344" layoutX="162.0" layoutY="410.0" opacity="0.1" startX="31.5999755859375" startY="-123.80000305175781" />
-      <Button layoutX="481.0" layoutY="27.0" mnemonicParsing="false" text="High Score :          " />
-      <Button layoutX="24.0" layoutY="24.0" mnemonicParsing="false" text="Score Actuel :       " />
+      <Button layoutX="464.0" layoutY="54.0" mnemonicParsing="false" text="High Score :          " />
+      <Button layoutX="464.0" layoutY="23.0" mnemonicParsing="false" text="Score Actuel :       " />
       <Label layoutX="10.0" layoutY="388.0" text="MIASHS Sciences Co - S5">
          <font>
             <Font size="11.0" />
