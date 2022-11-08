@@ -31,16 +31,22 @@ public class Jeu2048FXMLController implements Initializable {
     @FXML
     private void handleButtonAction(MouseEvent event) {
         System.out.println("Clic de souris sur le bouton menu");
-    }    
+    }
     
     @FXML
     public void keyPressed(KeyEvent ke) {
         System.out.println("touche appuyée");
         String touche = ke.getText();
-        if (touche.compareTo("q") == 0) { // utilisateur appuie sur "q" pour envoyer la tuile vers la gauche
+        if (touche.compareTo("q") == 0) { // utilisateur appuie sur "q" pour envoyer les tuiles vers la gauche
 
-        } else if (touche.compareTo("d") == 0) { // utilisateur appuie sur "d" pour envoyer la tuile vers la droite
+        } else if (touche.compareTo("d") == 0) { // utilisateur appuie sur "d" pour envoyer les tuiles vers la droite
 
+        }else if (touche.compareTo("s") ==0){ //utilisateur appuie sur "s" pour envoyer les tuiles vers le bas
+            
+        }else if (touche.compareTo("z")==0){ //utilisateur appuie sur "z" pour envoyer les tuiles vers le haut
+            
+        }else if (touche.compareTo("r")==0){ //utilisateur appuie sur "r" pour envoyer
+            
         }
     }
     
