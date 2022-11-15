@@ -9,7 +9,7 @@ package ConsoleGame;
  *
  * @author ALEX
  */
-public class Cube {
+public class Cube implements Parametres {
     
     
     private Grille g1, g2, g3;
@@ -50,6 +50,16 @@ public class Cube {
         this.g3 = g3;
     }
     
+    
+    public void deplacementParticulier(int deplacement) {
+        
+        if (deplacement == POUSSER) {
+            for (int i=0; i<)
+            
+        }
+        
+        
+    }
     
     
     
