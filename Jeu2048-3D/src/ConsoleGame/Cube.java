@@ -108,7 +108,49 @@ public class Cube implements Parametres {
         
     }
     
-}
+    
+    
+    public void affichage () {
+        
+        
+        for (int j=0; j<TAILLE; j++) {
+            for (int i=0; i<TAILLE; i++) {
+            
+            System.out.print("[ ");
+            System.out.print(this.g1.getGrille()[i][j].getValeur() + " ");
+            System.out.print("]");
+            }
+            System.out.println("");
+        }
+        
+        System.out.println("   ");
+        
+        for (int j=0; j<TAILLE; j++) {
+            for (int i=0; i<TAILLE; i++) {
+            
+            System.out.print("[ ");
+            System.out.print(this.g2.getGrille()[i][j].getValeur() + " ");
+            System.out.print("]");
+            }
+            System.out.println("");
+        }
+        
+        System.out.println("   ");
+        
+        for (int j=0; j<TAILLE; j++) {
+            for (int i=0; i<TAILLE; i++) {
+            
+            System.out.print("[ ");
+            System.out.print(this.g2.getGrille()[i][j].getValeur() + " ");
+            System.out.print("]");
+            }
+            System.out.println("");
+        }
+        }
+        
+    }
+    
+
     
     
     
