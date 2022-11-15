@@ -45,7 +45,9 @@ public class Jeu2048FXMLController implements Initializable {
             
         }else if (touche.compareTo("z")==0){ //utilisateur appuie sur "z" pour envoyer les tuiles vers le haut
             
-        }else if (touche.compareTo("r")==0){ //utilisateur appuie sur "r" pour envoyer
+        }else if (touche.compareTo("r")==0){ //utilisateur appuie sur "r" pour envoyer les tuiles vers les étages inférieurs 
+            
+        }else if (touche.compareTo("f")==0){ // utilisateur appuie sur "f" pour envoyer les tuiles vers les étages supérieurs
             
         }
     }
