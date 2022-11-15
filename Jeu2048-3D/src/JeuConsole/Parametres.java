@@ -18,6 +18,6 @@ public interface Parametres {
     static final int GAUCHE = -2;
     static final int TAILLE = 3;
     static final int OBJECTIF = 2048;
-    //static final int POUSSER = ;
-    //static final int TIRER = ;
+    static final int POUSSER = 6;
+    static final int TIRER = -6;
 }

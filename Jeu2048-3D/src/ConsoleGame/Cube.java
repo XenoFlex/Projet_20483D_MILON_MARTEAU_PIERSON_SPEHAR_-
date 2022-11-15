@@ -54,16 +54,64 @@ public class Cube implements Parametres {
     public void deplacementParticulier(int deplacement) {
         
         if (deplacement == POUSSER) {
-            for (int i=0; i<)
+            for (int i=0; i<TAILLE; i++) {
+                for (int j=0 ; j<TAILLE; j++) {
+                    if (this.g3.getGrille()[i][j].getValeur()==0 && this.g2.getGrille()[i][j].getValeur()==0)  {
+                       this.g3.getGrille()[i][j].setValeur(this.g1.getGrille()[i][j].getValeur());
+                       this.g1.getGrille()[i][j].setValeur(0);
+                }
+                else if (this.g3.getGrille()[i][j].getValeur()==0) {
+                    this.g3.getGrille()[i][j].setValeur(this.g2.getGrille()[i][j].getValeur());
+                    this.g2.getGrille()[i][j].setValeur(this.g1.getGrille()[i][j].getValeur());
+                    this.g1.getGrille()[i][j].setValeur(0);
+                }
+                else if (this.g3.getGrille()[i][j].getValeur()==this.g2.getGrille()[i][j].getValeur()) {
+                    this.g3.getGrille()[i][j].setValeur(this.g3.getGrille()[i][j].getValeur()*2);
+                    this.g2.getGrille()[i][j].setValeur(this.g1.getGrille()[i][j].getValeur());
+                    this.g1.getGrille()[i][j].setValeur(0);
+                }
+                else if (this.g2.getGrille()[i][j].getValeur()==this.g1.getGrille()[i][j].getValeur()) {
+                    this.g2.getGrille()[i][j].setValeur(this.g2.getGrille()[i][j].getValeur()*2);
+                    this.g1.getGrille()[i][j].setValeur(0);
+                }
+            }
+            
+            }    
+    }
+        if (deplacement == POUSSER) {
+            for (int i=0; i<TAILLE; i++) {
+                for (int j=0 ; j<TAILLE; j++) {
+                    if (this.g1.getGrille()[i][j].getValeur()==0 && this.g2.getGrille()[i][j].getValeur()==0)  {
+                       this.g1.getGrille()[i][j].setValeur(this.g3.getGrille()[i][j].getValeur());
+                       this.g3.getGrille()[i][j].setValeur(0);
+                }
+                else if (this.g1.getGrille()[i][j].getValeur()==0) {
+                    this.g1.getGrille()[i][j].setValeur(this.g2.getGrille()[i][j].getValeur());
+                    this.g2.getGrille()[i][j].setValeur(this.g3.getGrille()[i][j].getValeur());
+                    this.g3.getGrille()[i][j].setValeur(0);
+                }
+                else if (this.g1.getGrille()[i][j].getValeur()==this.g2.getGrille()[i][j].getValeur()) {
+                    this.g1.getGrille()[i][j].setValeur(this.g1.getGrille()[i][j].getValeur()*2);
+                    this.g2.getGrille()[i][j].setValeur(this.g3.getGrille()[i][j].getValeur());
+                    this.g3.getGrille()[i][j].setValeur(0);
+                }
+                else if (this.g2.getGrille()[i][j].getValeur()==this.g3.getGrille()[i][j].getValeur()) {
+                    this.g2.getGrille()[i][j].setValeur(this.g2.getGrille()[i][j].getValeur()*2);
+                    this.g3.getGrille()[i][j].setValeur(0);
+                }
+            }
             
         }
         
         
     }
-    
-    
-    
-    
-    
+        
+    }
     
 }
+    
+    
+    
+    
+    
+
