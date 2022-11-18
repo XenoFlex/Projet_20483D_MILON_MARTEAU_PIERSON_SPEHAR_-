@@ -27,79 +27,18 @@ public class Main implements Parametres {
       cube.randomCase();
       cube.affichage();
       
+      int k=0;
       
-      
-      //while (!end) {
+      while (!(k==25)) {
        cube.randomCase();
        System.out.println("===================");
        System.out.println("===================");
        
        System.out.println(" ");
        cube.affichage();
-       
-       cube.randomCase();
-       System.out.println("===================");
-       System.out.println("===================");
-       
-       System.out.println(" ");
-       cube.affichage();
-       
-       cube.randomCase();
-       System.out.println("===================");
-       System.out.println("===================");
-       
-       System.out.println(" ");
-       cube.affichage();
-       
-       cube.randomCase();
-       System.out.println("===================");
-       System.out.println("===================");
-       
-       System.out.println(" ");
-       cube.affichage();
-       
-       cube.randomCase();
-       System.out.println("===================");
-       System.out.println("===================");
-       
-       System.out.println(" ");
-       cube.affichage();
-       
-       cube.randomCase();
-       System.out.println("===================");
-       System.out.println("===================");
-       
-       System.out.println(" ");
-       cube.affichage();
-       
-       cube.randomCase();
-       System.out.println("===================");
-       System.out.println("===================");
-       
-       System.out.println(" ");
-       cube.affichage();
-       
-       cube.randomCase();
-       System.out.println("===================");
-       System.out.println("===================");
-       
-       System.out.println(" ");
-       cube.affichage();
+       k++;
       
-      
-      
-      
-      
-      
-      
-      
-   
-      
-      
-      //System.out.println(cube.getG1().getGrille()[0][0].getValeur());
-      
-
-        
+    }
     }
     
     public static Cube init() {
