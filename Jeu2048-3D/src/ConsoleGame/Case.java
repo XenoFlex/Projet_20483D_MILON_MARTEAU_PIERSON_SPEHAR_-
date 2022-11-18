@@ -13,7 +13,7 @@ public class Case {
     
     private int x, y, valeur, numerogrille;
     
-    public Case(int abs, int ord, int v, int n) {
+    public Case(int abs, int ord, int v, int n) {       //constructeur
         this.x = abs;
         this.y = ord;
         this.valeur = v;
@@ -25,36 +25,36 @@ public class Case {
     }
 
    
-    public int getX() {
+    public int getX() {         //getter
         return this.x;
     }
 
-    public int getY() {
+    public int getY() {         //getter
         return this.y;
     }
 
-    public void setX(int x) {
+    public void setX(int x) {       //setter
         this.x = x;
     }
 
-    public void setY(int y) {
-        this.y = y;
+    public void setY(int y) {       //setter
+        this.y = y;     
     }
 
 
-    public void setValeur(int valeur) {
+    public void setValeur(int valeur) {         //  setter
         this.valeur = valeur;
     }
 
-    public int getValeur() {
+    public int getValeur() {            //getter
         return this.valeur;
     }
 
-    public int getNumerogrille() {
+    public int getNumerogrille() {          //getter
         return numerogrille;
     }
 
-    public void setNumerogrille(int numerogrille) {
+    public void setNumerogrille(int numerogrille) {     //setter
         this.numerogrille = numerogrille;
     }
     

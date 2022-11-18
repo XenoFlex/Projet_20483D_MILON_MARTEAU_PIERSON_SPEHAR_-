@@ -19,7 +19,7 @@ public class Cube implements Parametres {
     private Grille g1, g2, g3;
     
 
-    public Cube(Grille g1, Grille g2, Grille g3) {
+    public Cube(Grille g1, Grille g2, Grille g3) {          //constructeur
         this.g1 = g1;
         this.g2 = g2;
         this.g3 = g3;
@@ -31,27 +31,27 @@ public class Cube implements Parametres {
     
     
 
-    public Grille getG1() {
+    public Grille getG1() {         //getter
         return g1;
     }
 
-    public void setG1(Grille g1) {
+    public void setG1(Grille g1) {      //setter
         this.g1 = g1;
     }
 
-    public Grille getG2() {
+    public Grille getG2() {         //getter
         return g2;
     }
 
-    public void setG2(Grille g2) {
+    public void setG2(Grille g2) {      //setter
         this.g2 = g2;
     }
 
-    public Grille getG3() {
+    public Grille getG3() {         //getter
         return g3;
     }
 
-    public void setG3(Grille g3) {
+    public void setG3(Grille g3) {          //setter
         this.g3 = g3;
     }
     
@@ -66,7 +66,7 @@ public class Cube implements Parametres {
     
     public void deplacementParticulier(int deplacement) {
         
-        if (deplacement == POUSSER) {
+        if (deplacement == POUSSER) {           //si le déplacement est "pousser" 
             for (int i=0; i<TAILLE; i++) {
                 for (int j=0 ; j<TAILLE; j++) {
                     if (this.g3.getGrille()[i][j].getValeur()==0 && this.g2.getGrille()[i][j].getValeur()==0)  {
@@ -123,12 +123,13 @@ public class Cube implements Parametres {
     
     
     
-    public void affichage () {
+    public void affichage () {          //permet l'affichage du cube, c'est à dire des 3 grilles
         
-        
-        for (int j=0; j<TAILLE; j++) {
+        //parcours de la première grille 
+        for (int j=0; j<TAILLE; j++) {      
             for (int i=0; i<TAILLE; i++) {
             
+            //affichage de la première grille 
             System.out.print("[ ");
             System.out.print(this.g1.getGrille()[i][j].getValeur() + " ");
             System.out.print("]");
@@ -138,9 +139,11 @@ public class Cube implements Parametres {
         
         System.out.println("   ");
         
+        //parcours de la deuxième grille 
         for (int j=0; j<TAILLE; j++) {
             for (int i=0; i<TAILLE; i++) {
             
+            // affichage de la deuxième grille 
             System.out.print("[ ");
             System.out.print(this.g2.getGrille()[i][j].getValeur() + " ");
             System.out.print("]");
@@ -150,9 +153,11 @@ public class Cube implements Parametres {
         
         System.out.println("   ");
         
+        //parcours de la troisième grille 
         for (int j=0; j<TAILLE; j++) {
             for (int i=0; i<TAILLE; i++) {
             
+            //affichage de la troisième grille
             System.out.print("[ ");
             System.out.print(this.g3.getGrille()[i][j].getValeur() + " ");
             System.out.print("]");
@@ -161,7 +166,7 @@ public class Cube implements Parametres {
         }
         }
     
-        public void randomCase() {
+        public void randomCase() {              //permet de placer alétoirement une case
             
             Random ra = new Random();
             int[] alea = new int[3];
