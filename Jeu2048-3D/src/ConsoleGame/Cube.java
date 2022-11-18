@@ -5,6 +5,10 @@
  */
 package ConsoleGame;
 
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Random;
+
 /**
  *
  * @author ALEX
@@ -14,14 +18,15 @@ public class Cube implements Parametres {
     
     private Grille g1, g2, g3;
     
-    public Cube () {
-        
-    }
 
     public Cube(Grille g1, Grille g2, Grille g3) {
         this.g1 = g1;
         this.g2 = g2;
         this.g3 = g3;
+    }
+    
+    public Cube() {
+        
     }
     
     
@@ -49,6 +54,14 @@ public class Cube implements Parametres {
     public void setG3(Grille g3) {
         this.g3 = g3;
     }
+    
+    //public void init() {
+        
+      //  this.g1.init();
+      //  this.g2.init();
+      //  this.g3.init();
+        
+    // }
     
     
     public void deplacementParticulier(int deplacement) {
@@ -78,7 +91,7 @@ public class Cube implements Parametres {
             
             }    
     }
-        if (deplacement == POUSSER) {
+        if (deplacement == TIRER) {
             for (int i=0; i<TAILLE; i++) {
                 for (int j=0 ; j<TAILLE; j++) {
                     if (this.g1.getGrille()[i][j].getValeur()==0 && this.g2.getGrille()[i][j].getValeur()==0)  {
@@ -141,12 +154,75 @@ public class Cube implements Parametres {
             for (int i=0; i<TAILLE; i++) {
             
             System.out.print("[ ");
-            System.out.print(this.g2.getGrille()[i][j].getValeur() + " ");
+            System.out.print(this.g3.getGrille()[i][j].getValeur() + " ");
             System.out.print("]");
             }
             System.out.println("");
         }
         }
+    
+        public void randomCase() {
+            
+            Random ra = new Random();
+            int[] alea = new int[3];
+             alea[0]=2;
+             alea[1]=2;
+             alea[2]=4;
+             
+             alea.length;
+             
+             int n = ra.nextInt(alea.length);
+             Case[] vacant = new Case[TAILLE*TAILLE*TAILLE];
+             int k=0;
+             
+             for (int i=0; i<TAILLE; i++) {
+                 for(int j=0; j<TAILLE; j++) {
+                       if (this.g1.getGrille()[i][j].getValeur()==0) {
+                           vacant[k]=this.g1.getGrille()[i][j];
+                           k++;
+   
+           
+                       }
+                       if (this.g2.getGrille()[i][j].getValeur()==0) {
+                           vacant[k]=this.g2.getGrille()[i][j];
+                           k++;
+                      
+                       }
+                       if (this.g3.getGrille()[i][j].getValeur()==0) {
+                           vacant[k]=this.g3.getGrille()[i][j];
+                           k++;
+                       }
+                 } 
+             }
+             
+             int m = ra.nextInt(vacant.length);
+             
+             Case ajout = new Case();;
+             ajout = vacant[m];
+             
+             System.out.println(ajout.getX()+ " " + ajout.getY() + " " + ajout.getValeur() + " " + ajout.getNumerogrille());
+             
+             System.out.println(alea[n]);
+             
+             if (ajout.getNumerogrille()==1){
+                 this.g1.getGrille()[ajout.getX()][ajout.getY()].setValeur(2);
+                 System.out.println("tess");
+            
+             } else if (ajout.getNumerogrille()==2){
+                 this.g2.getGrille()[ajout.getX()][ajout.getY()].setValeur(2);
+                  System.out.println("tess");
+             } else if (ajout.getNumerogrille()==3){
+                 this.g3.getGrille()[ajout.getX()][ajout.getY()].setValeur(2);
+                  System.out.println("tess");
+             }
+             
+             
+   
+
+           
+        }
+    
+        
         
     }
     

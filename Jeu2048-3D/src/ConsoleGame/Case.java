@@ -11,12 +11,17 @@ package ConsoleGame;
  */
 public class Case {
     
-    private int x, y, valeur;
+    private int x, y, valeur, numerogrille;
     
-    public Case(int abs, int ord, int v) {
+    public Case(int abs, int ord, int v, int n) {
         this.x = abs;
         this.y = ord;
         this.valeur = v;
+        this.numerogrille = n;
+    }
+    
+    public Case(){
+        
     }
 
    
@@ -44,5 +49,15 @@ public class Case {
     public int getValeur() {
         return this.valeur;
     }
+
+    public int getNumerogrille() {
+        return numerogrille;
+    }
+
+    public void setNumerogrille(int numerogrille) {
+        this.numerogrille = numerogrille;
+    }
+    
+    
     
 }
