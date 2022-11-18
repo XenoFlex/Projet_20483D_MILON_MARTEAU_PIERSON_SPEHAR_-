@@ -169,51 +169,51 @@ public class Cube implements Parametres {
              alea[1]=2;
              alea[2]=4;
              
-             alea.length;
              
              int n = ra.nextInt(alea.length);
-             Case[] vacant = new Case[TAILLE*TAILLE*TAILLE];
+             HashSet<Case> vacant = new HashSet<Case>();
              int k=0;
              
              for (int i=0; i<TAILLE; i++) {
                  for(int j=0; j<TAILLE; j++) {
                        if (this.g1.getGrille()[i][j].getValeur()==0) {
-                           vacant[k]=this.g1.getGrille()[i][j];
+                           vacant.add(this.g1.getGrille()[i][j]);
                            k++;
    
            
                        }
                        if (this.g2.getGrille()[i][j].getValeur()==0) {
-                           vacant[k]=this.g2.getGrille()[i][j];
+                           vacant.add(this.g2.getGrille()[i][j]);
                            k++;
                       
                        }
                        if (this.g3.getGrille()[i][j].getValeur()==0) {
-                           vacant[k]=this.g3.getGrille()[i][j];
+                           vacant.add(this.g3.getGrille()[i][j]);
                            k++;
                        }
                  } 
              }
              
-             int m = ra.nextInt(vacant.length);
-             
+             int m = ra.nextInt(vacant.size());
              Case ajout = new Case();;
-             ajout = vacant[m];
+             Case[] tab = new Case[vacant.size()];
+             vacant.toArray(tab);
+             ajout = tab[m];
              
              System.out.println(ajout.getX()+ " " + ajout.getY() + " " + ajout.getValeur() + " " + ajout.getNumerogrille());
              
              System.out.println(alea[n]);
              
              if (ajout.getNumerogrille()==1){
-                 this.g1.getGrille()[ajout.getX()][ajout.getY()].setValeur(2);
-                 System.out.println("tess");
+                 this.g1.getGrille()[ajout.getX()][ajout.getY()].setValeur(alea[n]);
+
             
              } else if (ajout.getNumerogrille()==2){
-                 this.g2.getGrille()[ajout.getX()][ajout.getY()].setValeur(2);
-                  System.out.println("tess");
+                 this.g2.getGrille()[ajout.getX()][ajout.getY()].setValeur(alea[n]);
+
              } else if (ajout.getNumerogrille()==3){
-                 this.g3.getGrille()[ajout.getX()][ajout.getY()].setValeur(2);
-                  System.out.println("tess");
+                 this.g3.getGrille()[ajout.getX()][ajout.getY()].setValeur(alea[n]);
+
              }
              
              
