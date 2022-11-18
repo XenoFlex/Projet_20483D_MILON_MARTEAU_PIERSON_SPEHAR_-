@@ -4,6 +4,9 @@
  * and open the template in the editor.
  */
 package ConsoleGame;
+import java.util.Random;
+import java.util.Scanner;
+
 
 /**
  *
@@ -18,7 +21,7 @@ public class Main implements Parametres {
         
        
         // TODO code application logic here
-      
+      Scanner sc = new Scanner(System.in);
       Cube cube = new Cube();
       boolean end = false;
         
@@ -27,17 +30,74 @@ public class Main implements Parametres {
       cube.randomCase();
       cube.affichage();
       
-      int k=0;
       
-      while (!(k==25)) {
-       cube.randomCase();
-       System.out.println("===================");
-       System.out.println("===================");
+      while (!end) {
+          
+       System.out.println("Déplacer vers la Droite (d), Gauche (q), Haut (z), Bas (s), Random (w), Inferieur (f), Superieur(r) ?");
+            String s = sc.nextLine();       
+            s.toLowerCase();
+            //si la lettre rentrée ne correspond pas aux lettres possibles, un message d'erreur s'affiche
+            if (!(s.equals("d") || s.equals("droite")
+                    || s.equals("q") || s.equals("gauche")
+                    || s.equals("z") || s.equals("haut")
+                    || s.equals("s") || s.equals("bas")
+                    || s.equals("w") || s.equals("random")
+                    || s.equals("f")  || s.equals("inferieur")
+                    || s.equals("r")  || s.equals("superieur"))) {
+                System.out.println("Vous devez écrire d pour Droite, g pour Gauche, h pour Haut, b pour Bas, f pour inférieur et r pour supérieur");
+            } else {    //s'il n'y a pas d'erreur
+                int direction = DROITE;
+                if (s.equals("d") || s.equals("droite")) {
+                    direction = DROITE;
+                } else if (s.equals("q") || s.equals("gauche")) {
+                    direction = GAUCHE;
+                } else if (s.equals("z") || s.equals("haut")) {
+                    direction = HAUT;
+                } else if (s.equals("s") || s.equals("bas")){
+                    direction = BAS;
+                } else if (s.equals("r") || s.equals("tirer")) {
+                    direction = TIRER;
+                } else if (s.equals("f") || s.equals("pousser")){
+                    direction = POUSSER;
+                } else if (s.equals("w") || s.equals("random")){
+                    Random rand = new Random();
+                    int randomNum = rand.nextInt((4 - 1)+1) + 1;
+                    System.out.println(randomNum);
+                    switch(randomNum){
+                        case 1:
+                            direction = DROITE;
+                            break;
+                            
+                        case 2:
+                            direction = GAUCHE;
+                            break;
+                            
+                        case 3:
+                            direction = HAUT;
+                            break;
+                            
+                        case 4:
+                            direction = BAS;
+                            break;
+                            
+                    }
+                }
+                if (direction==TIRER || direction==POUSSER) {
+                    cube.deplacementParticulier(direction);
+                } else {
+                    cube.getG1().deplacementSimple(direction);
+                    cube.getG2().deplacementSimple(direction);
+                    cube.getG3().deplacementSimple(direction);
+                }
+          
+                cube.randomCase();
+                System.out.println("===================");
+                System.out.println("===================");
        
-       System.out.println(" ");
-       cube.affichage();
-       k++;
+                System.out.println(" ");
+                cube.affichage();
       
+    }
     }
     }
     

@@ -200,9 +200,9 @@ public class Cube implements Parametres {
              vacant.toArray(tab);
              ajout = tab[m];
              
-             System.out.println(ajout.getX()+ " " + ajout.getY() + " " + ajout.getValeur() + " " + ajout.getNumerogrille());
+             //System.out.println(ajout.getX()+ " " + ajout.getY() + " " + ajout.getValeur() + " " + ajout.getNumerogrille());
              
-             System.out.println(alea[n]);
+             //System.out.println(alea[n]);
              
              if (ajout.getNumerogrille()==1){
                  this.g1.getGrille()[ajout.getX()][ajout.getY()].setValeur(alea[n]);
