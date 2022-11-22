@@ -108,6 +108,15 @@ public class Grille implements Parametres{
                        this.grille[i][1].setValeur(this.grille[i][1].getValeur()*2);
                        this.grille[i][0].setValeur(0);
                }
+               else if  (this.grille[i][1].getValeur()==0 && this.grille[i][2].getValeur()== this.grille[i][0].getValeur()) {
+                       this.grille[i][2].setValeur(this.grille[i][0].getValeur()*2);
+                       this.grille[i][0].setValeur(0);
+               }
+               else if  (this.grille[i][1].getValeur()==0 && this.grille[i][2].getValeur()!= 0 && this.grille[i][0].getValeur()!=0 && this.grille[i][2].getValeur()!=this.grille[i][0].getValeur()) {
+                       this.grille[i][1].setValeur(this.grille[i][0].getValeur());
+                       this.grille[i][0].setValeur(0);
+                       
+               }
                
         }
     }
@@ -130,6 +139,15 @@ public class Grille implements Parametres{
                else if  (this.grille[1][i].getValeur()==this.grille[0][i].getValeur()) {
                        this.grille[1][i].setValeur(this.grille[1][i].getValeur()*2);
                        this.grille[0][i].setValeur(0);
+               }
+               else if  (this.grille[1][i].getValeur()==0 && this.grille[2][i].getValeur()== this.grille[0][i].getValeur()) {
+                       this.grille[2][i].setValeur(this.grille[0][i].getValeur()*2);
+                       this.grille[0][i].setValeur(0);
+               }
+               else if  (this.grille[1][i].getValeur()==0 && this.grille[2][i].getValeur()!= 0 && this.grille[0][i].getValeur()!=0 && this.grille[2][i].getValeur()!=this.grille[0][i].getValeur()) {
+                       this.grille[1][i].setValeur(this.grille[0][i].getValeur());
+                       this.grille[0][i].setValeur(0);
+                       
                }
                
         }
@@ -154,6 +172,15 @@ public class Grille implements Parametres{
                else if  (this.grille[1][i].getValeur()==this.grille[2][i].getValeur()) {
                        this.grille[1][i].setValeur(this.grille[1][i].getValeur()*2);
                        this.grille[2][i].setValeur(0);
+               }
+                else if  (this.grille[1][i].getValeur()==0 && this.grille[0][i].getValeur()== this.grille[2][i].getValeur()) {
+                       this.grille[0][i].setValeur(this.grille[2][i].getValeur()*2);
+                       this.grille[2][i].setValeur(0);
+               }
+               else if  (this.grille[1][i].getValeur()==0 && this.grille[0][i].getValeur()!= 0 && this.grille[2][i].getValeur()!=0 && this.grille[0][i].getValeur()!=this.grille[2][i].getValeur()) {
+                       this.grille[1][i].setValeur(this.grille[2][i].getValeur());
+                       this.grille[2][i].setValeur(0);
+                       
                }
                
         }
