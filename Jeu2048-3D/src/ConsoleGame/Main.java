@@ -90,7 +90,10 @@ public class Main implements Parametres {
                     cube.getG3().deplacementSimple(direction);
                 }
           
+                end=cube.gameOver();
                 cube.randomCase();
+                
+                
                 System.out.println("===================");
                 System.out.println("===================");
        
