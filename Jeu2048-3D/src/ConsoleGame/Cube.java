@@ -239,7 +239,7 @@ public class Cube implements Parametres {
                  ensemble.toArray(tab);
                  
                  int m=0;
-                 while ((!stop) || (m<ensemble.size())) {
+                 while ((!stop) && (m<ensemble.size())) {
                      if (tab[m].getValeur()==2048) {
                          stop = true;
                      }

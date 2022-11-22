@@ -57,7 +57,7 @@ public class Grille implements Parametres{
     
     public void deplacementSimple(int deplacement) {
         if (deplacement == HAUT) {
-            for (int i=0; i<TAILLE-1 ; i++) {
+            for (int i=0; i<TAILLE ; i++) {
                if (this.grille[i][0].getValeur()==0 && this.grille[i][1].getValeur()==0) {
                    this.grille[i][0].setValeur(this.grille[i][2].getValeur());
                    this.grille[i][2].setValeur(0);
@@ -76,11 +76,20 @@ public class Grille implements Parametres{
                        this.grille[i][1].setValeur(this.grille[i][1].getValeur()*2);
                        this.grille[i][2].setValeur(0);
                }
+               else if  (this.grille[i][1].getValeur()==0 && this.grille[i][0].getValeur()== this.grille[i][2].getValeur()) {
+                       this.grille[i][0].setValeur(this.grille[i][2].getValeur()*2);
+                       this.grille[i][2].setValeur(0);
+               }
+               else if  (this.grille[i][1].getValeur()==0 && this.grille[i][0].getValeur()!= 0 && this.grille[i][2].getValeur()!=0 && this.grille[i][0].getValeur()!=this.grille[i][2].getValeur()) {
+                       this.grille[i][1].setValeur(this.grille[i][2].getValeur());
+                       this.grille[i][2].setValeur(0);
+                       
+               }
                
         }
       }
       if (deplacement == BAS) {
-            for (int i=0; i<TAILLE-1 ; i++) {
+            for (int i=0; i<TAILLE ; i++) {
                if (this.grille[i][2].getValeur()==0 && this.grille[i][1].getValeur()==0) {
                    this.grille[i][2].setValeur(this.grille[i][0].getValeur());
                    this.grille[i][0].setValeur(0);
@@ -103,7 +112,7 @@ public class Grille implements Parametres{
         }
     }
       if (deplacement == DROITE) {
-            for (int i=0; i<TAILLE-1 ; i++) {
+            for (int i=0; i<TAILLE ; i++) {
                if (this.grille[2][i].getValeur()==0 && this.grille[1][i].getValeur()==0) {
                    this.grille[2][i].setValeur(this.grille[0][i].getValeur());
                    this.grille[0][i].setValeur(0);
@@ -127,7 +136,7 @@ public class Grille implements Parametres{
         
     }
       if (deplacement == GAUCHE) {
-            for (int i=0; i<TAILLE-1 ; i++) {
+            for (int i=0; i<TAILLE ; i++) {
                if (this.grille[0][i].getValeur()==0 && this.grille[1][i].getValeur()==0) {
                    this.grille[0][i].setValeur(this.grille[0][i].getValeur());
                    this.grille[2][i].setValeur(0);
