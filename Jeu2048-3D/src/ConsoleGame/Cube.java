@@ -220,12 +220,39 @@ public class Cube implements Parametres {
                  this.g3.getGrille()[ajout.getX()][ajout.getY()].setValeur(alea[n]);
 
              }
-             
-             
-   
-
-           
         }
+             
+             public boolean gameOver() {
+                 
+                 HashSet<Case> ensemble = new HashSet<Case>();
+                 boolean stop = false;
+                 
+                 for (int i = 0; i<TAILLE; i++) {
+                   for (int j = 0; j<TAILLE; j++) {
+                     ensemble.add(this.g1.getGrille()[i][j]);
+                     ensemble.add(this.g2.getGrille()[i][j]);
+                     ensemble.add(this.g3.getGrille()[i][j]);
+                   }
+                 }
+                 
+                 Case[] tab = new Case[ensemble.size()];
+                 ensemble.toArray(tab);
+                 
+                 int m=0;
+                 while ((!stop) || (m<ensemble.size())) {
+                     if (tab[m].getValeur()==2048) {
+                         stop = true;
+                     }
+                     m++;
+                 } 
+                 return stop;
+             }
+                 
+                 
+                 
+                 
+             
+        
         
 
        
