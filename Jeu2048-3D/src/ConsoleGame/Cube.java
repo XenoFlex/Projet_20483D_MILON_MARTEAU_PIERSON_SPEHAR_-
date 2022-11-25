@@ -74,9 +74,16 @@ public class Cube implements Parametres {
                        this.g1.getGrille()[i][j].setValeur(0);
                 }
                 else if (this.g3.getGrille()[i][j].getValeur()==0) {
+                    if (this.g2.getGrille()[i][j].getValeur()==this.g1.getGrille()[i][j].getValeur() && this.g2.getGrille()[i][j].getValeur()!=0 && this.g1.getGrille()[i][j].getValeur()!=0) {
+                       this.g3.getGrille()[i][j].setValeur(this.g2.getGrille()[i][j].getValeur()*2);
+                       this.g2.getGrille()[i][j].setValeur(0);
+                       this.g1.getGrille()[i][j].setValeur(0);
+                   }
+                   else {
                     this.g3.getGrille()[i][j].setValeur(this.g2.getGrille()[i][j].getValeur());
                     this.g2.getGrille()[i][j].setValeur(this.g1.getGrille()[i][j].getValeur());
                     this.g1.getGrille()[i][j].setValeur(0);
+                    }
                 }
                 else if (this.g3.getGrille()[i][j].getValeur()==this.g2.getGrille()[i][j].getValeur()) {
                     this.g3.getGrille()[i][j].setValeur(this.g3.getGrille()[i][j].getValeur()*2);
@@ -87,6 +94,15 @@ public class Cube implements Parametres {
                     this.g2.getGrille()[i][j].setValeur(this.g2.getGrille()[i][j].getValeur()*2);
                     this.g1.getGrille()[i][j].setValeur(0);
                 }
+                else if  (this.g2.getGrille()[i][j].getValeur()==0 && this.g3.getGrille()[i][j].getValeur()==this.g1.getGrille()[i][j].getValeur()) {
+                       this.g3.getGrille()[i][j].setValeur(this.g3.getGrille()[i][j].getValeur()*2);
+                       this.g1.getGrille()[i][j].setValeur(0);
+               }
+               else if  (this.g2.getGrille()[i][j].getValeur()==0 && this.g3.getGrille()[i][j].getValeur()!= 0 && this.g1.getGrille()[i][j].getValeur()!=0 && this.g3.getGrille()[i][j].getValeur()!=this.g1.getGrille()[i][j].getValeur()) {
+                       this.g2.getGrille()[i][j].setValeur(this.g1.getGrille()[i][j].getValeur());
+                       this.g1.getGrille()[i][j].setValeur(0);
+                       
+               }
             }
             
             }    
@@ -99,9 +115,16 @@ public class Cube implements Parametres {
                        this.g3.getGrille()[i][j].setValeur(0);
                 }
                 else if (this.g1.getGrille()[i][j].getValeur()==0) {
+                    if (this.g2.getGrille()[i][j].getValeur()==this.g3.getGrille()[i][j].getValeur() && this.g2.getGrille()[i][j].getValeur()!=0 && this.g3.getGrille()[i][j].getValeur()!=0) {
+                       this.g1.getGrille()[i][j].setValeur(this.g2.getGrille()[i][j].getValeur()*2);
+                       this.g2.getGrille()[i][j].setValeur(0);
+                       this.g3.getGrille()[i][j].setValeur(0);
+                   }
+                    else {
                     this.g1.getGrille()[i][j].setValeur(this.g2.getGrille()[i][j].getValeur());
                     this.g2.getGrille()[i][j].setValeur(this.g3.getGrille()[i][j].getValeur());
                     this.g3.getGrille()[i][j].setValeur(0);
+                    }
                 }
                 else if (this.g1.getGrille()[i][j].getValeur()==this.g2.getGrille()[i][j].getValeur()) {
                     this.g1.getGrille()[i][j].setValeur(this.g1.getGrille()[i][j].getValeur()*2);
@@ -112,6 +135,15 @@ public class Cube implements Parametres {
                     this.g2.getGrille()[i][j].setValeur(this.g2.getGrille()[i][j].getValeur()*2);
                     this.g3.getGrille()[i][j].setValeur(0);
                 }
+                else if  (this.g2.getGrille()[i][j].getValeur()==0 && this.g3.getGrille()[i][j].getValeur()==this.g1.getGrille()[i][j].getValeur()) {
+                       this.g1.getGrille()[i][j].setValeur(this.g3.getGrille()[i][j].getValeur()*2);
+                       this.g3.getGrille()[i][j].setValeur(0);
+                }
+                else if  (this.g2.getGrille()[i][j].getValeur()==0 && this.g3.getGrille()[i][j].getValeur()!= 0 && this.g1.getGrille()[i][j].getValeur()!=0 && this.g3.getGrille()[i][j].getValeur()!=this.g1.getGrille()[i][j].getValeur()) {
+                       this.g2.getGrille()[i][j].setValeur(this.g3.getGrille()[i][j].getValeur());
+                       this.g3.getGrille()[i][j].setValeur(0);
+                       
+               }
             }
             
         }
