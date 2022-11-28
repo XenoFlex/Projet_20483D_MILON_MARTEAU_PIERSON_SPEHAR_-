@@ -225,7 +225,6 @@ public class Cube implements Parametres {
                  } 
              }
              
-             System.out.println(vacant.size());
              
              if (!(vacant.isEmpty())) {
              
