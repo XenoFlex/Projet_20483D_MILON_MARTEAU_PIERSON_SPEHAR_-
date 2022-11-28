@@ -5,6 +5,8 @@
  */
 package ConsoleGame;
 
+import java.util.HashSet;
+
 /**
  *
  * @author ALEX
@@ -56,6 +58,199 @@ public class Case {
 
     public void setNumerogrille(int numerogrille) {     //setter
         this.numerogrille = numerogrille;
+    }
+    
+    public Case setCase(Case c) {
+        return c;
+    }
+    
+    public HashSet<Case> getVoisins (Cube cube) {
+        
+        HashSet<Case> voisin = new HashSet<Case>();
+        
+        if (this.x==0  && this.y==0 && this.numerogrille==1) {
+            voisin.add(setCase(cube.getG1().getGrille()[0][1]));
+            voisin.add(setCase(cube.getG1().getGrille()[1][0]));
+            voisin.add(setCase(cube.getG2().getGrille()[0][0]));
+        }
+        else if (this.x==1  && this.y==0 && this.numerogrille==1) {
+            voisin.add(setCase(cube.getG1().getGrille()[0][0]));
+            voisin.add(setCase(cube.getG1().getGrille()[2][0]));
+            voisin.add(setCase(cube.getG1().getGrille()[1][1]));
+            voisin.add(setCase(cube.getG2().getGrille()[1][0]));
+        }
+        else if (this.x==2  && this.y==0 && this.numerogrille==1) {
+            voisin.add(setCase(cube.getG1().getGrille()[1][0]));
+            voisin.add(setCase(cube.getG1().getGrille()[1][2]));
+            voisin.add(setCase(cube.getG2().getGrille()[2][0]));
+        }
+        else if (this.x==0  && this.y==1 && this.numerogrille==1) {
+            voisin.add(setCase(cube.getG1().getGrille()[0][0]));
+            voisin.add(setCase(cube.getG1().getGrille()[1][1]));
+            voisin.add(setCase(cube.getG1().getGrille()[0][2]));
+            voisin.add(setCase(cube.getG2().getGrille()[0][1]));
+        }
+        else if (this.x==1  && this.y==1 && this.numerogrille==1) {
+            voisin.add(setCase(cube.getG1().getGrille()[1][0]));
+            voisin.add(setCase(cube.getG1().getGrille()[0][1]));
+            voisin.add(setCase(cube.getG1().getGrille()[2][1]));
+            voisin.add(setCase(cube.getG1().getGrille()[1][2]));
+            voisin.add(setCase(cube.getG2().getGrille()[1][1]));
+        }
+        else if (this.x==2  && this.y==1 && this.numerogrille==1) {
+            voisin.add(setCase(cube.getG1().getGrille()[2][0]));
+            voisin.add(setCase(cube.getG1().getGrille()[2][2]));
+            voisin.add(setCase(cube.getG1().getGrille()[1][1]));
+            voisin.add(setCase(cube.getG2().getGrille()[2][1]));
+        }
+        else if (this.x==0  && this.y==2 && this.numerogrille==1) {
+            voisin.add(setCase(cube.getG1().getGrille()[0][1]));
+            voisin.add(setCase(cube.getG1().getGrille()[1][2]));
+            voisin.add(setCase(cube.getG2().getGrille()[0][2]));
+        }
+        else if (this.x==1  && this.y==2 && this.numerogrille==1) {
+            voisin.add(setCase(cube.getG1().getGrille()[0][2]));
+            voisin.add(setCase(cube.getG1().getGrille()[2][2]));
+            voisin.add(setCase(cube.getG1().getGrille()[1][1]));
+            voisin.add(setCase(cube.getG2().getGrille()[1][2]));
+        }
+        else if (this.x==2  && this.y==2 && this.numerogrille==1) {
+            voisin.add(setCase(cube.getG1().getGrille()[2][1]));
+            voisin.add(setCase(cube.getG1().getGrille()[1][2]));
+            voisin.add(setCase(cube.getG2().getGrille()[2][2]));
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        else if (this.x==0  && this.y==0 && this.numerogrille==2) {
+            voisin.add(setCase(cube.getG2().getGrille()[0][1]));
+            voisin.add(setCase(cube.getG2().getGrille()[1][0]));
+            voisin.add(setCase(cube.getG3().getGrille()[0][0]));
+            voisin.add(setCase(cube.getG1().getGrille()[0][0]));
+        }
+        else if (this.x==1  && this.y==0 && this.numerogrille==2) {
+            voisin.add(setCase(cube.getG2().getGrille()[0][0]));
+            voisin.add(setCase(cube.getG2().getGrille()[2][0]));
+            voisin.add(setCase(cube.getG2().getGrille()[1][1]));
+            voisin.add(setCase(cube.getG3().getGrille()[1][0]));
+            voisin.add(setCase(cube.getG1().getGrille()[1][0]));
+        }
+        else if (this.x==2  && this.y==0 && this.numerogrille==2) {
+            voisin.add(setCase(cube.getG2().getGrille()[1][0]));
+            voisin.add(setCase(cube.getG2().getGrille()[1][2]));
+            voisin.add(setCase(cube.getG3().getGrille()[2][0]));
+            voisin.add(setCase(cube.getG1().getGrille()[2][0]));
+        }
+        else if (this.x==0  && this.y==1 && this.numerogrille==2) {
+            voisin.add(setCase(cube.getG2().getGrille()[0][0]));
+            voisin.add(setCase(cube.getG2().getGrille()[1][1]));
+            voisin.add(setCase(cube.getG2().getGrille()[0][2]));
+            voisin.add(setCase(cube.getG3().getGrille()[0][1]));
+            voisin.add(setCase(cube.getG1().getGrille()[0][1]));
+        }
+        else if (this.x==1  && this.y==1 && this.numerogrille==2) {
+            voisin.add(setCase(cube.getG2().getGrille()[1][0]));
+            voisin.add(setCase(cube.getG2().getGrille()[0][1]));
+            voisin.add(setCase(cube.getG2().getGrille()[2][1]));
+            voisin.add(setCase(cube.getG2().getGrille()[1][2]));
+            voisin.add(setCase(cube.getG3().getGrille()[1][1]));
+            voisin.add(setCase(cube.getG1().getGrille()[1][1]));
+            
+        }
+        else if (this.x==2  && this.y==1 && this.numerogrille==2) {
+            voisin.add(setCase(cube.getG2().getGrille()[2][0]));
+            voisin.add(setCase(cube.getG2().getGrille()[2][2]));
+            voisin.add(setCase(cube.getG2().getGrille()[1][1]));
+            voisin.add(setCase(cube.getG3().getGrille()[2][1]));
+            voisin.add(setCase(cube.getG1().getGrille()[2][1]));
+        }
+        else if (this.x==0  && this.y==2 && this.numerogrille==2) {
+            voisin.add(setCase(cube.getG2().getGrille()[0][1]));
+            voisin.add(setCase(cube.getG2().getGrille()[1][2]));
+            voisin.add(setCase(cube.getG3().getGrille()[0][2]));
+            voisin.add(setCase(cube.getG1().getGrille()[0][2]));
+        }
+        else if (this.x==1  && this.y==2 && this.numerogrille==2) {
+            voisin.add(setCase(cube.getG2().getGrille()[0][2]));
+            voisin.add(setCase(cube.getG2().getGrille()[2][2]));
+            voisin.add(setCase(cube.getG2().getGrille()[1][1]));
+            voisin.add(setCase(cube.getG3().getGrille()[1][2]));
+            voisin.add(setCase(cube.getG1().getGrille()[1][2]));
+        }
+        else if (this.x==2  && this.y==2 && this.numerogrille==2) {
+            voisin.add(setCase(cube.getG2().getGrille()[2][1]));
+            voisin.add(setCase(cube.getG2().getGrille()[1][2]));
+            voisin.add(setCase(cube.getG3().getGrille()[2][2]));
+            voisin.add(setCase(cube.getG1().getGrille()[2][2]));
+        }
+        
+        
+        
+        
+        
+        
+       
+        
+        else if (this.x==0  && this.y==0 && this.numerogrille==3) {
+            voisin.add(setCase(cube.getG3().getGrille()[0][1]));
+            voisin.add(setCase(cube.getG3().getGrille()[1][0]));
+            voisin.add(setCase(cube.getG2().getGrille()[0][0]));
+        }
+        else if (this.x==1  && this.y==0 && this.numerogrille==3) {
+            voisin.add(setCase(cube.getG3().getGrille()[0][0]));
+            voisin.add(setCase(cube.getG3().getGrille()[2][0]));
+            voisin.add(setCase(cube.getG3().getGrille()[1][1]));
+            voisin.add(setCase(cube.getG2().getGrille()[1][0]));
+        }
+        else if (this.x==2  && this.y==0 && this.numerogrille==3) {
+            voisin.add(setCase(cube.getG3().getGrille()[1][0]));
+            voisin.add(setCase(cube.getG3().getGrille()[1][2]));
+            voisin.add(setCase(cube.getG2().getGrille()[2][0]));
+        }
+        else if (this.x==0  && this.y==1 && this.numerogrille==3) {
+            voisin.add(setCase(cube.getG3().getGrille()[0][0]));
+            voisin.add(setCase(cube.getG3().getGrille()[1][1]));
+            voisin.add(setCase(cube.getG3().getGrille()[0][2]));
+            voisin.add(setCase(cube.getG2().getGrille()[0][1]));
+        }
+        else if (this.x==1  && this.y==1 && this.numerogrille==3) {
+            voisin.add(setCase(cube.getG3().getGrille()[1][0]));
+            voisin.add(setCase(cube.getG3().getGrille()[0][1]));
+            voisin.add(setCase(cube.getG3().getGrille()[2][1]));
+            voisin.add(setCase(cube.getG3().getGrille()[1][2]));
+            voisin.add(setCase(cube.getG2().getGrille()[1][1]));
+        }
+        else if (this.x==2  && this.y==1 && this.numerogrille==3) {
+            voisin.add(setCase(cube.getG3().getGrille()[2][0]));
+            voisin.add(setCase(cube.getG3().getGrille()[2][2]));
+            voisin.add(setCase(cube.getG3().getGrille()[1][1]));
+            voisin.add(setCase(cube.getG2().getGrille()[2][1]));
+        }
+        else if (this.x==0  && this.y==2 && this.numerogrille==3) {
+            voisin.add(setCase(cube.getG3().getGrille()[0][1]));
+            voisin.add(setCase(cube.getG3().getGrille()[1][2]));
+            voisin.add(setCase(cube.getG2().getGrille()[0][2]));
+        }
+        else if (this.x==1  && this.y==2 && this.numerogrille==3) {
+            voisin.add(setCase(cube.getG3().getGrille()[0][2]));
+            voisin.add(setCase(cube.getG3().getGrille()[2][2]));
+            voisin.add(setCase(cube.getG3().getGrille()[1][1]));
+            voisin.add(setCase(cube.getG2().getGrille()[1][2]));
+        }
+        else if (this.x==2  && this.y==2 && this.numerogrille==3) {
+            voisin.add(setCase(cube.getG3().getGrille()[2][1]));
+            voisin.add(setCase(cube.getG3().getGrille()[1][2]));
+            voisin.add(setCase(cube.getG2().getGrille()[2][2]));
+        }
+        
+        
+        return voisin;
+               
     }
     
     

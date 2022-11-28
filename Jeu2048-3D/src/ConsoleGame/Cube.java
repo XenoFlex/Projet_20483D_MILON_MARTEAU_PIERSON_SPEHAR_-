@@ -7,6 +7,7 @@ package ConsoleGame;
 
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Random;
 
 /**
@@ -205,33 +206,30 @@ public class Cube implements Parametres {
              alea[0]=2;
              alea[1]=2;
              alea[2]=4;
-             
-             
              int n = ra.nextInt(alea.length);
+             
              HashSet<Case> vacant = new HashSet<Case>();
-             int k=0;
              
              for (int i=0; i<TAILLE; i++) {
                  for(int j=0; j<TAILLE; j++) {
                        if (this.g1.getGrille()[i][j].getValeur()==0) {
                            vacant.add(this.g1.getGrille()[i][j]);
-                           k++;
-   
-           
                        }
                        if (this.g2.getGrille()[i][j].getValeur()==0) {
                            vacant.add(this.g2.getGrille()[i][j]);
-                           k++;
                       
                        }
                        if (this.g3.getGrille()[i][j].getValeur()==0) {
                            vacant.add(this.g3.getGrille()[i][j]);
-                           k++;
                        }
                  } 
              }
              
-             int m = ra.nextInt(vacant.size());
+             System.out.println(vacant.size());
+             
+             if (vacant.size()!=0) {
+             
+             int m = ra.nextInt(vacant.size()-1);
              Case ajout = new Case();;
              Case[] tab = new Case[vacant.size()];
              vacant.toArray(tab);
@@ -244,7 +242,6 @@ public class Cube implements Parametres {
              if (ajout.getNumerogrille()==1){
                  this.g1.getGrille()[ajout.getX()][ajout.getY()].setValeur(alea[n]);
 
-            
              } else if (ajout.getNumerogrille()==2){
                  this.g2.getGrille()[ajout.getX()][ajout.getY()].setValeur(alea[n]);
 
@@ -252,9 +249,10 @@ public class Cube implements Parametres {
                  this.g3.getGrille()[ajout.getX()][ajout.getY()].setValeur(alea[n]);
 
              }
+             }
         }
              
-             public boolean gameOver() {
+             public boolean victoire2048() {
                  
                  HashSet<Case> ensemble = new HashSet<Case>();
                  boolean stop = false;
@@ -267,31 +265,53 @@ public class Cube implements Parametres {
                    }
                  }
                  
-                 Case[] tab = new Case[ensemble.size()];
-                 ensemble.toArray(tab);
+                 Iterator<Case> itera = ensemble.iterator();
                  
-                 int m=0;
-                 while ((!stop) && (m<ensemble.size())) {
-                     if (tab[m].getValeur()==2048) {
+                 while (itera.hasNext() && (!stop)) {
+                     if (itera.next().getValeur()==2048) {
                          stop = true;
                      }
-                     m++;
-                 } 
+                    }
+                 
                  return stop;
              }
-                 
-                 
-                 
-                 
              
-        
-        
-
-       
-    
-        
-        
+             public boolean gameOver(Cube cube) {
+                 
+                 HashSet<Case> ensemble = new HashSet<Case>();
+                 boolean stop = true;
+                 
+                 for (int i = 0; i<TAILLE; i++) {
+                   for (int j = 0; j<TAILLE; j++) {
+                     ensemble.add(this.g1.getGrille()[i][j]);
+                     ensemble.add(this.g2.getGrille()[i][j]);
+                     ensemble.add(this.g3.getGrille()[i][j]);
+                   }
+                 }
+                 
+                 Iterator<Case> itera = ensemble.iterator();
+                 Case c = new Case();
+                 HashSet<Case> voisin= new HashSet<Case>();
+                 
+                 while (itera.hasNext() && (stop)) {
+                     c=itera.next();
+                     System.out.println(c.getNumerogrille() + " " + c.getX() + " " + c.getY() + " " +c.getValeur());
+                     voisin = c.getVoisins(cube);
+                     Case[] tab = new Case[voisin.size()];
+                     voisin.toArray(tab); 
+                     for (int i=0; i<tab.length; i++) {
+                     System.out.println(tab[i].getNumerogrille() + " " + tab[i].getX() + " " + tab[i].getY() + " " +tab[i].getValeur());
+                     if (c.getValeur()==tab[i].getValeur()) {
+                       stop = false;
+                     }
+                     }
+                 }
+                 return true;    //retourne faux si si il ya un voisin avec la meme valeur
+                                 //retourne vrai si il n'y a pas de voisin avec la meme valeur
+ 
     }
+             
+}
     
 
     

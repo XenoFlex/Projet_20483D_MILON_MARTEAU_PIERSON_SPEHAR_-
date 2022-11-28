@@ -23,7 +23,9 @@ public class Main implements Parametres {
         // TODO code application logic here
       Scanner sc = new Scanner(System.in);
       Cube cube = new Cube();
-      boolean end = false;
+      boolean bloque = false;
+      boolean victoire = false;
+      int compteur = 0;
         
       cube = init();
       cube.randomCase();
@@ -31,7 +33,7 @@ public class Main implements Parametres {
       cube.affichage();
       
       
-      while (!end) {
+      while ((!bloque) && (!victoire)) {
           
        System.out.println("Déplacer vers la Droite (d), Gauche (q), Haut (z), Bas (s), Random (w), Inferieur (f), Superieur(r) ?");
             String s = sc.nextLine();       
@@ -62,7 +64,6 @@ public class Main implements Parametres {
                 } else if (s.equals("w") || s.equals("random")){
                     Random rand = new Random();
                     int randomNum = rand.nextInt((4 - 1)+1) + 1;
-                    System.out.println(randomNum);
                     switch(randomNum){
                         case 1:
                             direction = DROITE;
@@ -84,29 +85,64 @@ public class Main implements Parametres {
                 }
                 if (direction==TIRER || direction==POUSSER) {
                     cube.deplacementParticulier(direction);
+                    compteur++;
                 } else {
                     cube.getG1().deplacementSimple(direction);
                     cube.getG2().deplacementSimple(direction);
                     cube.getG3().deplacementSimple(direction);
+                    compteur++;
                 }
           
-                end=cube.gameOver();
-                cube.randomCase();
+                bloque=cube.gameOver(cube);     //si le jeu se retrouve bloque alors défaite et fin du while
+                victoire=cube.victoire2048(); //si une valeur du cube est égale à 2048 alors le joueur a gagné et fin du while
+                cube.randomCase();              
                 
+                System.out.println(" ");
                 
-                System.out.println("===================");
                 System.out.println("===================");
        
                 System.out.println(" ");
-                cube.affichage();
+                
+                System.out.println("Coup numéro : "+ compteur);
+                
+                System.out.println(" ");
+
+            if (direction == GAUCHE) {
+                System.out.println("Direction choisi : GAUCHE ");
+            }
+            else if (direction == DROITE) {
+                System.out.println("Direction choisi : DROITE ");
+            }
+            else if (direction == HAUT) {
+                System.out.println("Direction choisi : HAUT ");
+            }
+            else if (direction == BAS) {
+                System.out.println("Direction choisi : BAS ");
+            }
+            else if (direction == POUSSER) {
+                System.out.println("Direction choisi : SUPERIEUR ");
+            }
+            else if (direction == TIRER) {
+                System.out.println("Direction choisi : INFERIEUR ");
+            }
+            System.out.println(" ");
+            cube.affichage();
       
     }
     }
+    
+    if (victoire) {
+        System.out.println ("Bravo vous avez gagné ! ");
+        System.out.println ("Nombre de coup total : " + compteur);
+    } else if (bloque) {
+        System.out.println ("Vous avez perdu ! (le jeu est bloqué");
+    }
+    
     }
     
     public static Cube init() {
         
-        Case[][] initia1 = new Case[TAILLE][TAILLE];
+      Case[][] initia1 = new Case[TAILLE][TAILLE];
       Case[][] initia2 = new Case[TAILLE][TAILLE];
       Case[][] initia3 = new Case[TAILLE][TAILLE];
       
