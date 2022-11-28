@@ -227,9 +227,9 @@ public class Cube implements Parametres {
              
              System.out.println(vacant.size());
              
-             if (vacant.size()!=0) {
+             if (!(vacant.isEmpty())) {
              
-             int m = ra.nextInt(vacant.size()-1);
+             int m = ra.nextInt(vacant.size());
              Case ajout = new Case();;
              Case[] tab = new Case[vacant.size()];
              vacant.toArray(tab);
@@ -295,18 +295,18 @@ public class Cube implements Parametres {
                  
                  while (itera.hasNext() && (stop)) {
                      c=itera.next();
-                     System.out.println(c.getNumerogrille() + " " + c.getX() + " " + c.getY() + " " +c.getValeur());
+                     //System.out.println(c.getNumerogrille() + " " + c.getX() + " " + c.getY() + " " +c.getValeur());
                      voisin = c.getVoisins(cube);
                      Case[] tab = new Case[voisin.size()];
                      voisin.toArray(tab); 
                      for (int i=0; i<tab.length; i++) {
-                     System.out.println(tab[i].getNumerogrille() + " " + tab[i].getX() + " " + tab[i].getY() + " " +tab[i].getValeur());
+                     //System.out.println(tab[i].getNumerogrille() + " " + tab[i].getX() + " " + tab[i].getY() + " " +tab[i].getValeur());
                      if (c.getValeur()==tab[i].getValeur()) {
                        stop = false;
                      }
                      }
                  }
-                 return true;    //retourne faux si si il ya un voisin avec la meme valeur
+                 return stop;    //retourne faux si si il ya un voisin avec la meme valeur
                                  //retourne vrai si il n'y a pas de voisin avec la meme valeur
  
     }

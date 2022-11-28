@@ -93,8 +93,9 @@ public class Main implements Parametres {
                     compteur++;
                 }
           
-                bloque=cube.gameOver(cube);     //si le jeu se retrouve bloque alors défaite et fin du while
                 victoire=cube.victoire2048(); //si une valeur du cube est égale à 2048 alors le joueur a gagné et fin du while
+                bloque=cube.gameOver(cube);     //si le jeu se retrouve bloque alors défaite et fin du while
+                
                 cube.randomCase();              
                 
                 System.out.println(" ");
