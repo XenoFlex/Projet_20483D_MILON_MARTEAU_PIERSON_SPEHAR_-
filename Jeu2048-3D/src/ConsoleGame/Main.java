@@ -63,7 +63,7 @@ public class Main implements Parametres {
                     direction = POUSSER;
                 } else if (s.equals("w") || s.equals("random")){
                     Random rand = new Random();
-                    int randomNum = rand.nextInt((4 - 1)+1) + 1;
+                    int randomNum = rand.nextInt((6 - 1)+1) + 1;
                     switch(randomNum){
                         case 1:
                             direction = DROITE;
@@ -79,6 +79,12 @@ public class Main implements Parametres {
                             
                         case 4:
                             direction = BAS;
+                            break;
+                        case 5:
+                            direction = TIRER;
+                            break;
+                        case 6:
+                            direction = POUSSER;
                             break;
                             
                     }
