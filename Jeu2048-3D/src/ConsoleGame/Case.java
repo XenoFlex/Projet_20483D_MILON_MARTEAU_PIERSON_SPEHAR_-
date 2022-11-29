@@ -6,7 +6,7 @@
 package ConsoleGame;
 
 import java.util.HashSet;
-
+import java.io.Serializable;
 /**
  *
  * @author ALEX

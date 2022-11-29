@@ -6,6 +6,7 @@
 package ConsoleGame;
 import java.util.Random;
 import java.util.Scanner;
+import java.io.Serializable;
 
 
 /**
