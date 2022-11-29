@@ -13,7 +13,7 @@ import java.util.HashSet;
  */
 public class Grille implements Parametres{
     
-    private Case[][] grille;        
+    private Case[][] grille;        //une Grille est composé d'un tableau 2D de Cases et de son numéro (1, 2 ou 3)
     private int numero;
     
     public Grille () {
@@ -37,14 +37,10 @@ public class Grille implements Parametres{
         this.numero = numero;
     }
     
-    public void init() {
-        
-
-    }
     
-    public void deplacementSimple(int deplacement) {
+    public void deplacementSimple(int deplacement) {    //methode de deplacement simple (HAUT, BAS, GAUCHE, DROITE)
         if (deplacement == HAUT) {
-            for (int i=0; i<TAILLE ; i++) {
+            for (int i=0; i<TAILLE ; i++) {                                        
                if (this.grille[i][0].getValeur()==0 && this.grille[i][1].getValeur()==0) {
                    this.grille[i][0].setValeur(this.grille[i][2].getValeur());
                    this.grille[i][2].setValeur(0);

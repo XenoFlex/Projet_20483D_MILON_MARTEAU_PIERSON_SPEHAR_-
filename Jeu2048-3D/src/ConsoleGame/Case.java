@@ -13,7 +13,7 @@ import java.util.HashSet;
  */
 public class Case {
     
-    private int x, y, valeur, numerogrille;
+    private int x, y, valeur, numerogrille;   //une Case est comosé d'une de coordonnées x et y, d'une valeur et d'un numero de Grille
     
     public Case(int abs, int ord, int v, int n) {       //constructeur
         this.x = abs;
@@ -64,8 +64,8 @@ public class Case {
         return c;
     }
     
-    public HashSet<Case> getVoisins (Cube cube) {
-        
+    public HashSet<Case> getVoisins (Cube cube) {      //methode qui renvoie l'ensemble des voisins d'une Case donnée
+                                                       // note : methode pas très "optimiser" car chaque case est ajouté manuellement
         HashSet<Case> voisin = new HashSet<Case>();
         
         if (this.x==0  && this.y==0 && this.numerogrille==1) {
