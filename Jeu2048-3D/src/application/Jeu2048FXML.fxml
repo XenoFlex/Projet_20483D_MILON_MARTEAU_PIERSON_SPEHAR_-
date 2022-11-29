@@ -13,7 +13,6 @@
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #faf8ef;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Jeu2048FXMLController">
    <children>
       <CubicCurve controlX1="92.73458862304688" controlX2="225.39999389648438" controlY1="-29.799999237060547" controlY2="32.99998474121094" endX="448.0" endY="-1.52587890625E-5" fill="#ff461f" layoutX="161.0" layoutY="93.0" startX="-150.0" stroke="BLACK" strokeWidth="2.0" />
-      <CubicCurve controlX1="92.73458862304688" controlX2="225.39999389648438" controlY1="-29.799999237060547" controlY2="32.99998474121094" endX="448.0" endY="-1.52587890625E-5" fill="#ff461f" layoutX="161.0" layoutY="327.0" startX="-150.0" stroke="BLACK" strokeWidth="2.0" />
       <Label layoutX="10.0" layoutY="388.0" text="MIASHS Sciences Co - S5" textFill="#766e65">
          <font>
             <Font size="11.0" />
@@ -29,7 +28,7 @@
             <Font name="Apple SD GothicNeo ExtraBold" size="48.0" />
          </font>
       </Label>
-      <GridPane cache="true" hgap="5.0" layoutX="13.0" layoutY="113.0" prefHeight="182.0" prefWidth="198.0" style="-fx-background-color: #bcac9e;" vgap="5.0">
+      <GridPane fx:id="Grillefx1" cache="true" hgap="5.0" layoutX="13.0" layoutY="113.0" prefHeight="182.0" prefWidth="198.0" style="-fx-background-color: #bcac9e;" vgap="5.0">
          <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="108.79998779296875" minWidth="10.0" prefWidth="100.0" />
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="101.59997558593751" minWidth="10.0" prefWidth="100.0" />
@@ -59,16 +58,6 @@
             <Insets bottom="7.0" left="7.0" right="7.0" top="5.0" />
          </padding>
       </GridPane>
-      <Label layoutX="20.0" layoutY="64.0" text="The squares represent layers of the cube - bottom, middle and top." textFill="#766e65">
-         <font>
-            <Font name="Apple SD GothicNeo ExtraBold" size="13.0" />
-         </font>
-      </Label>
-      <Label layoutX="20.0" layoutY="51.0" text="Join the numbers inside cube and get to the 2048 tile!" textFill="#766e65">
-         <font>
-            <Font name="Apple SD GothicNeo ExtraBold" size="13.0" />
-         </font>
-      </Label>
       <Pane layoutX="417.0" layoutY="18.0" prefHeight="39.0" prefWidth="91.0" style="-fx-background-color: #bcab9f; -fx-background-radius: 5;">
          <children>
             <Label layoutX="25.0" layoutY="4.0" text="SCORE" textFill="WHITE">
@@ -97,17 +86,7 @@
             </Label>
          </children>
       </Pane>
-      <Label layoutX="14.0" layoutY="347.0" text="HOW TO PLAY: Use your arrow keys and Q, E to move the tiles. " textFill="#766e65">
-         <font>
-            <Font name="Apple SD GothicNeo ExtraBold" size="13.0" />
-         </font>
-      </Label>
-      <Label layoutX="13.0" layoutY="360.0" text="When two tiles with the same number touch, they merge into one!" textFill="#766e65">
-         <font>
-            <Font name="Apple SD GothicNeo ExtraBold" size="13.0" />
-         </font>
-      </Label>
-      <GridPane cache="true" hgap="5.0" layoutX="206.0" layoutY="113.0" prefHeight="182.0" prefWidth="198.0" style="-fx-background-color: #bcac9e;" vgap="5.0">
+      <GridPane fx:id="Grillefx2" cache="true" hgap="5.0" layoutX="206.0" layoutY="113.0" prefHeight="182.0" prefWidth="198.0" style="-fx-background-color: #bcac9e;" vgap="5.0">
          <children>
             <Button mnemonicParsing="false" prefHeight="54.0" prefWidth="54.0" style="-fx-background-color: #cdbfb5;" GridPane.columnIndex="2" GridPane.rowIndex="1" />
             <Button mnemonicParsing="false" prefHeight="54.0" prefWidth="54.0" style="-fx-background-color: #cdbfb5;" GridPane.columnIndex="2" />
@@ -137,7 +116,7 @@
             <RowConstraints maxHeight="55.99999389648437" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
          </rowConstraints>
       </GridPane>
-      <GridPane cache="true" hgap="5.0" layoutX="399.0" layoutY="113.0" prefHeight="182.0" prefWidth="198.0" style="-fx-background-color: #bcac9e;" vgap="5.0">
+      <GridPane fx:id="Grillefx3" cache="true" hgap="5.0" layoutX="399.0" layoutY="113.0" prefHeight="182.0" prefWidth="198.0" style="-fx-background-color: #bcac9e;" vgap="5.0">
          <children>
             <Button mnemonicParsing="false" prefHeight="54.0" prefWidth="54.0" style="-fx-background-color: #cdbfb5;" GridPane.columnIndex="2" GridPane.rowIndex="1" />
             <Button mnemonicParsing="false" prefHeight="54.0" prefWidth="54.0" style="-fx-background-color: #cdbfb5;" GridPane.columnIndex="2" />
@@ -163,5 +142,10 @@
             <RowConstraints maxHeight="55.99999389648437" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
          </rowConstraints>
       </GridPane>
+      <Button fx:id="BtnTest" layoutX="487.0" layoutY="341.0" mnemonicParsing="false" onAction="#Test" text="BoutonTest" />
+      <Button fx:id="btndroite" layoutX="335.0" layoutY="326.0" mnemonicParsing="false" onAction="#godroite" text="-&gt;" />
+      <Button fx:id="btngauche" layoutX="200.0" layoutY="326.0" mnemonicParsing="false" onAction="#gogauche" text="&lt;-" />
+      <Button fx:id="btnhaut" layoutX="247.0" layoutY="326.0" mnemonicParsing="false" onAction="#gohaut" text="^" />
+      <Button fx:id="btnbas" layoutX="295.0" layoutY="326.0" mnemonicParsing="false" onAction="#gobas" text="v" />
    </children>
 </AnchorPane>
