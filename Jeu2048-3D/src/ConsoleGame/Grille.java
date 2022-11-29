@@ -13,9 +13,8 @@ import java.util.HashSet;
  */
 public class Grille implements Parametres{
     
-    private Case[][] grille;
+    private Case[][] grille;        
     private int numero;
-    private int valeurMax = 0;
     
     public Grille () {
         this.grille = new Case[TAILLE][TAILLE];
@@ -37,22 +36,10 @@ public class Grille implements Parametres{
     public void setNumero(int numero) {
         this.numero = numero;
     }
-
-    
-    public int getValeurMax() {
-        return valeurMax;
-    }
-
-    public void setValeurMax(int valeurMax) {
-        this.valeurMax = valeurMax;
-    }
     
     public void init() {
         
-     
-        
-        
-        
+
     }
     
     public void deplacementSimple(int deplacement) {
