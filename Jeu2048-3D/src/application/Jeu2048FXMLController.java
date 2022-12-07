@@ -44,6 +44,15 @@ public class Jeu2048FXMLController implements Initializable {
     private Button godroite;
     
     @FXML
+    private Button gogauche;
+    
+    @FXML
+    private Button gobas;
+    
+    @FXML
+    private Button gohaut;
+    
+    @FXML
     private GridPane Grillefx1;
     
     @FXML
@@ -59,6 +68,18 @@ public class Jeu2048FXMLController implements Initializable {
     
     public void Test(ActionEvent event){
         System.out.println("Okay");
+        Text text0 = new Text("0");
+        for(int i = 0; i<TAILLE;i++){
+            for(int j = 0; i<TAILLE;i++){
+                text0.setTextAlignment(TextAlignment.CENTER);
+                Grillefx3.add(text0, i, j);
+                Grillefx3.setHalignment(text0 ,HPos.CENTER);
+            }
+        }
+        Text text2 = new Text("2");
+        text2.setTextAlignment(TextAlignment.CENTER);
+        Grillefx3.add(text2, 1, 1);
+        Grillefx3.setHalignment(text2, HPos.CENTER);
     }
     
     
@@ -76,10 +97,22 @@ public class Jeu2048FXMLController implements Initializable {
   
     public void godroite(ActionEvent event){
         System.out.println("OkayOkay");
-        Text text = new Text("2");
-        text.setTextAlignment(TextAlignment.CENTER);
-        Grillefx2.add(text, 2, 1);
-        Grillefx2.setHalignment(text, HPos.CENTER);
+        
+    }
+    
+    public void gogauche(ActionEvent event){
+        System.out.println("OkayOkay");
+        
+    }
+    
+    public void gobas(ActionEvent event){
+        System.out.println("OkayOkay");
+        
+    }
+    
+    public void gohaut(ActionEvent event){
+        System.out.println("OkayOkay");
+        
     }
 
     

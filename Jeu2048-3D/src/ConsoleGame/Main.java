@@ -24,13 +24,28 @@ public class Main implements Parametres {
         // TODO code application logic here
       Scanner sc = new Scanner(System.in);
       Cube cube = new Cube();             //initialisation du Cube
+      Joueur joueur = new Joueur();
       boolean bloque = false;             // boolean répresentant si le jeu est bloqué ou non
       boolean victoire = false;           // boolean représentant si le joueur à gagné donc une case est égale à 2048
-      int compteur = 0;                   //compteur pour le nombre de coup
-        
+      String pseudo = new String();
+      boolean pseudovalide = false;
+      int compteur = 0;                   //compteur pour le nombre de coup  
+      
       cube = init();                      //initialisation du cube
       cube.randomCase();                  //ajout d'un nouvelles case (2 ou 4)
       cube.randomCase();                  //ajout d'un nouvelles case (2 ou 4)
+      
+      
+      while (!pseudovalide) {             //le joueur inscrit son pseudonyme
+      System.out.println("Quel est votre pseudo ?");
+      joueur.setPseudo(sc.nextLine()); 
+      if ((joueur.getPseudo().length())<=10) {
+          pseudovalide = true;
+      }
+      }
+      
+      System.out.println("");
+      
       cube.affichage();                   //affichage des 3 grilles (donc du cube)
       
       
@@ -108,6 +123,8 @@ public class Main implements Parametres {
                 System.out.println(" ");
                 
                 System.out.println("===================");
+                
+                System.out.println("JOUEUR : " + pseudo);
        
                 System.out.println(" ");
                 
@@ -140,10 +157,10 @@ public class Main implements Parametres {
     }
     
     if (victoire) {                                         //lorsque la boucle while est fini, on vérifie si c'était pour la victoire ou si le jeu est bloqué
-        System.out.println ("Bravo vous avez gagné ! ");
+        System.out.println ("Bravo " + pseudo + "vous avez gagné ! ");
         System.out.println ("Nombre de coup total : " + compteur);
     } else if (bloque) {
-        System.out.println ("Vous avez perdu ! (le jeu est bloqué)");
+        System.out.println ("Vous avez perdu "+ pseudo+" ! (le jeu est bloqué)");
         System.out.println ("Nombre de coup total : " + compteur);
     }
     
