@@ -82,16 +82,16 @@ public class Jeu2048FXMLController implements Initializable {
                 Grillefx3.add(new Text("0"), 0, 1);
                 Grillefx3.add(new Text("0"), 0, 2);
                 Grillefx3.add(new Text("0"), 1, 0);
-                Grillefx3.add(new Text("0"), 1, 1);
+                Grillefx3.add(new Text("2"), 1, 1);
                 Grillefx3.add(new Text("0"), 1, 2);
                 Grillefx3.add(new Text("0"), 2, 0);
                 Grillefx3.add(new Text("0"), 2, 1);
                 Grillefx3.add(new Text("0"), 2, 2);
         
-        Text text2 = new Text("2");
+        /*Text text2 = new Text("2");
         text2.setTextAlignment(TextAlignment.CENTER);
         Grillefx3.add(text2, 1, 1);
-        Grillefx3.setHalignment(text2, HPos.CENTER);
+        Grillefx3.setHalignment(text2, HPos.CENTER);*/
     }
     
     
@@ -109,7 +109,7 @@ public class Jeu2048FXMLController implements Initializable {
   
     public void godroite(ActionEvent event){
         System.out.println("OkayOkay");
-        
+        System.out.println(Grillefx3.getCellBounds(0, TAILLE));
     }
     
     public void gogauche(ActionEvent event){
