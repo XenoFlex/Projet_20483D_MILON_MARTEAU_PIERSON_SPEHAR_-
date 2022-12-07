@@ -69,13 +69,25 @@ public class Jeu2048FXMLController implements Initializable {
     public void Test(ActionEvent event){
         System.out.println("Okay");
         Text text0 = new Text("0");
-        for(int i = 0; i<TAILLE;i++){
-            for(int j = 0; i<TAILLE;i++){
+        /*for(int i = 0; i<3;i++){
+            for(int j = 0; i<3;i++){
                 text0.setTextAlignment(TextAlignment.CENTER);
                 Grillefx3.add(text0, i, j);
                 Grillefx3.setHalignment(text0 ,HPos.CENTER);
             }
-        }
+        }*/
+        text0.setTextAlignment(TextAlignment.CENTER);
+        Grillefx3.setHalignment(text0 ,HPos.CENTER);
+                Grillefx3.add(new Text("0"), 0, 0);
+                Grillefx3.add(new Text("0"), 0, 1);
+                Grillefx3.add(new Text("0"), 0, 2);
+                Grillefx3.add(new Text("0"), 1, 0);
+                Grillefx3.add(new Text("0"), 1, 1);
+                Grillefx3.add(new Text("0"), 1, 2);
+                Grillefx3.add(new Text("0"), 2, 0);
+                Grillefx3.add(new Text("0"), 2, 1);
+                Grillefx3.add(new Text("0"), 2, 2);
+        
         Text text2 = new Text("2");
         text2.setTextAlignment(TextAlignment.CENTER);
         Grillefx3.add(text2, 1, 1);
