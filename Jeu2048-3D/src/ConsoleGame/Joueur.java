@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package application;
+package ConsoleGame;
 
 /**
  *
@@ -11,6 +11,10 @@ package application;
  */
 public class Joueur {
     private String pseudo;     //déclaration des variables
+    
+    public Joueur(){         //constructeur
+   
+    }
     
     public Joueur (String p){         //constructeur
         this.pseudo= p;

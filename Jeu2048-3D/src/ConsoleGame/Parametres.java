@@ -9,7 +9,7 @@ package ConsoleGame;
  *
  * @author ALEX
  */
-public interface Parametres {
+public interface Parametres {  //paramètres correspondant aux directions 
     static final int HAUT = 1;
     static final int DROITE = 2;
     static final int BAS = -1;

@@ -80,7 +80,7 @@ public class Cube implements Parametres {
                     this.g1.getGrille()[i][j].setValeur(0);
                     }
                 }
-                else if (this.g3.getGrille()[i][j].getValeur()==this.g2.getGrille()[i][j].getValeur()) { //sinon si valeur de G3 = valeur de G2                    this.g3.getGrille()[i][j].setValeur(this.g3.getGrille()[i][j].getValeur()*2);
+                else if (this.g3.getGrille()[i][j].getValeur()==this.g2.getGrille()[i][j].getValeur()) { //sinon si valeur de G3 = valeur de G2                   
                     this.g2.getGrille()[i][j].setValeur(this.g1.getGrille()[i][j].getValeur());
                     this.g1.getGrille()[i][j].setValeur(0);
                 }
