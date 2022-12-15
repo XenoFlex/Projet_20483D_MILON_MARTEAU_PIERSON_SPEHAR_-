@@ -4,9 +4,12 @@
  * and open the template in the editor.
  */
 package ConsoleGame;
+import application.ConnexionBDD;
+import application.Parser;
 import java.util.Random;
 import java.util.Scanner;
 import java.io.Serializable;
+import java.util.ArrayList;
 
 
 /**
@@ -24,7 +27,7 @@ public class Main implements Parametres {
         // TODO code application logic here
       Scanner sc = new Scanner(System.in);
       Cube cube = new Cube();             //initialisation du Cube
-      Joueur joueur = new Joueur("j1", 0);
+      Joueur joueur = new Joueur("j1", "0");
       boolean bloque = false;             // boolean répresentant si le jeu est bloqué ou non
       boolean victoire = false;           // boolean représentant si le joueur à gagné donc une case est égale à 2048
       boolean pseudovalide = false;
@@ -201,7 +204,38 @@ public class Main implements Parametres {
       Cube cube = new Cube(g1, g2, g3);
       
       return cube;
-        
+    
+     /* public static void(args){
+        String s;
+        if (args.length > 0) {
+            s = args[0];
+        } else {
+            s = "classement_joueurs.csv"; // nom du fichier .csv par défaut
+        }
+
+        // lecture et écriture dans un fichier .csv
+        Parser p = new Parser(s);
+        ArrayList<Joueur> joueur = p.parseJoueur(); //retourne la liste des joueurs contenus dans le fichier .csv
+        System.out.println(joueur); //affiche la liste des joueurs dans la console
+        Joueur i = new Joueur("eva,22");
+        p.addInternaute(i); //ajoute un joueur dans le fichier .csv
+        // interrogation et insertion de tuple dans la base de données
+        String host = "mysql-l2sciencesco.alwaysdata.net";
+        String port = "3306";
+        String dbname = "l2sciencesco_films";
+        String username = "199592";
+        String password = "L2sco;2020.";
+        ConnexionBDD c = new ConnexionBDD(host, port, dbname, username, password);
+
+        ArrayList<String> l = c.getTuples("SELECT * FROM Internaute");
+        System.out.println("Liste des joueurs deja presents dans la base :");
+        System.out.println(l);
+
+        for (Joueur joueur : joueur){ //inserer les joueurs du fichier .csv dans la base
+            String query = "INSERT INTO Joueur VALUES ('"+joueur.getPseudo()+"','"+joueur.getScore()+"')";
+            c.insertTuples(query);
+        }*/
     }
-}
+
+    }
       

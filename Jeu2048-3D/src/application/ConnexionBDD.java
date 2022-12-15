@@ -89,10 +89,8 @@ public class ConnexionBDD {        //déclaraction des variables
         return res;
     }
     
-    /*
-     * Insère un ou plusieurs tuples dans la base à partir de la requête passée en paramètre
-     * Pour cela, il faut utiliser la méthode executeUpdate dans la classe Statement
-     */
+    
+     //Insère un ou plusieurs tuples dans la base à partir de la requête passée en paramètre
     public void insertTuples(String updateQuery) {
         try {
             this.openConnexion();

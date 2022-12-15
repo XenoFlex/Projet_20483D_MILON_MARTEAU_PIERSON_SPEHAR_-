@@ -11,13 +11,13 @@ package ConsoleGame;
  */
 public class Joueur {
     private String pseudo; //déclaration des variables
-    private int score;  
+    private String score;  
     
     public Joueur () {
         
     }
     
-    public Joueur (String p, int s){         //constructeur
+    public Joueur (String p, String s){         //constructeur
         this.pseudo= p;
         this.score=s;
     }
@@ -30,11 +30,11 @@ public class Joueur {
         this.pseudo = p;
     }
     
-    public int getScore(){        //getter permettant de retourner le score du joueur
+    public String getScore(){        //getter permettant de retourner le score du joueur
         return this.score;
     }
     
-    public void setScore(int s){     //setter
+    public void setScore(String s){     //setter
         this.score=s;
     }
 
