@@ -39,7 +39,7 @@ public class Grille implements Parametres{
     }
     
     
-    public void deplacementSimple(int deplacement) {    //methode de deplacement simple (HAUT, BAS, GAUCHE, DROITE)
+    public void deplacementSimple(int deplacement) {    //methode de deplacement simple (HAUT, BAS, GAUCHE, DROITE), fonctionnement similaire que les déplacement INFERIEUR et SUPERIEUR mais adapté à une seule grille
         if (deplacement == HAUT) {
             for (int i=0; i<TAILLE ; i++) {                                        
                if (this.grille[i][0].getValeur()==0 && this.grille[i][1].getValeur()==0) {

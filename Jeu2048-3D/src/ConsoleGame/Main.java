@@ -135,22 +135,22 @@ public class Main implements Parametres {
                 System.out.println(" ");
 
             if (direction == GAUCHE) {                              //affichage de la direction choisi
-                System.out.println("Direction choisi : GAUCHE ");
+                System.out.println("Direction choisie : GAUCHE ");
             }
             else if (direction == DROITE) {
-                System.out.println("Direction choisi : DROITE ");
+                System.out.println("Direction choisie : DROITE ");
             }
             else if (direction == HAUT) {
-                System.out.println("Direction choisi : HAUT ");
+                System.out.println("Direction choisie : HAUT ");
             }
             else if (direction == BAS) {
-                System.out.println("Direction choisi : BAS ");
+                System.out.println("Direction choisie : BAS ");
             }
             else if (direction == POUSSER) {
-                System.out.println("Direction choisi : SUPERIEUR ");
+                System.out.println("Direction choisie : SUPERIEUR ");
             }
             else if (direction == TIRER) {
-                System.out.println("Direction choisi : INFERIEUR ");
+                System.out.println("Direction choisie : INFERIEUR ");
             }
             System.out.println(" ");
             cube.affichage();                                       //affichage du cube apres déplacement
