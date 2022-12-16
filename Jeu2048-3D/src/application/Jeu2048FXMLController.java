@@ -67,7 +67,7 @@ public class Jeu2048FXMLController implements Initializable {
     private Grille grilleModele3 = new Grille();
     
     public void Test(ActionEvent event){
-        System.out.println("Okay");
+        System.out.println("Deplacement");
         Text text0 = new Text("0");
         /*for(int i = 0; i<3;i++){
             for(int j = 0; i<3;i++){
@@ -143,7 +143,7 @@ public class Jeu2048FXMLController implements Initializable {
         if (touche.compareTo("q") == 0) { // utilisateur appuie sur "q" pour envoyer la tuile vers la gauche
   
         } else if (touche.compareTo("d") == 0) { // utilisateur appuie sur "d" pour envoyer la tuile vers la droite
-            System.out.println("okayokay");
+            System.out.println("Deplacement");
   
         } else if (touche.compareTo("z") == 0) { // utilisateur appuie sur "d" pour envoyer la tuile vers la droite
             
