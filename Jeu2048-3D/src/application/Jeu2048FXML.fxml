@@ -10,7 +10,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #faf8ef;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Jeu2048FXMLController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #faf8ef;" stylesheets="@../css/styles_1.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Jeu2048FXMLController">
    <children>
       <CubicCurve controlX1="92.73458862304688" controlX2="225.39999389648438" controlY1="-29.799999237060547" controlY2="32.99998474121094" endX="448.0" endY="-1.52587890625E-5" fill="#ff461f" layoutX="161.0" layoutY="93.0" startX="-150.0" stroke="BLACK" strokeWidth="2.0" />
       <Label layoutX="10.0" layoutY="388.0" text="MIASHS Sciences Co - S5" textFill="#766e65">
