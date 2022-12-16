@@ -128,5 +128,9 @@ public class Parser {
         }
         return temp;
     }
+
+    public ArrayList<Joueur> parseJoueur() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
 

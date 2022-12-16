@@ -39,10 +39,13 @@ public class Main implements Parametres {
       
       
       while (!pseudovalide) {             //le joueur inscrit son pseudonyme
-      System.out.println("Quel est votre pseudo ?");
+      System.out.println("Quel est votre pseudo ? - Le pseudo ne doit pas dépasser 10 caractères");
       joueur.setPseudo(sc.nextLine());
       if (joueur.getPseudo().length()<=10) {
           pseudovalide = true;
+      }
+      else{
+          System.out.println("Erreur : le pseudo que vous avez inscrit n'est pas valide car il est supérieur à 10 caractères");
       }
       }
       
