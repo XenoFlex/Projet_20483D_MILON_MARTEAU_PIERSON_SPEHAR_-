@@ -13,8 +13,15 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.layout.*;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundImage;
+import javafx.scene.layout.BackgroundPosition;
+import javafx.scene.layout.BackgroundRepeat;
+import javafx.scene.layout.BackgroundSize;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
@@ -32,9 +39,17 @@ public class NewFXMain extends Application {
         //loader.setLocation(getClass().getResource("/application/FXMLDocument.fxml"));
         //loader.setController(controller);
         //Parent root = loader.load();
-        
         Scene scene = new Scene(root);
         
+        /*Image img = new Image("https://static.vecteezy.com/ti/vecteur-libre/p3/1849553-fond-or-moderne-gratuit-vectoriel.jpg");
+        BackgroundImage bImg = new BackgroundImage(img,
+                                                   BackgroundRepeat.NO_REPEAT,
+                                                   BackgroundRepeat.NO_REPEAT,
+                                                   BackgroundPosition.DEFAULT,
+                                                   BackgroundSize.DEFAULT);
+        Background bGround = new Background(bImg);
+        
+        root.setBackground(bGround);*/
         stage.setScene(scene);
         stage.show();
      }
