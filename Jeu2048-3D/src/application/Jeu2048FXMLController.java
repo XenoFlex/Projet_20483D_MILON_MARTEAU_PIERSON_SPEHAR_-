@@ -108,22 +108,23 @@ public class Jeu2048FXMLController implements Initializable {
     
   
     public void godroite(ActionEvent event){
-        System.out.println("OkayOkay");
-        System.out.println(Grillefx3.getCellBounds(0, TAILLE));
+        System.out.println("Déplacement droite");
+        Grillefx3.getChildren().removeIf( node -> GridPane.getColumnIndex(node) == 1 && GridPane.getRowIndex(node) == 1);
+        //System.out.println(Grillefx3.getCellBounds(0, TAILLE));
     }
     
     public void gogauche(ActionEvent event){
-        System.out.println("OkayOkay");
+        System.out.println("Déplacement gauche");
         
     }
     
     public void gobas(ActionEvent event){
-        System.out.println("OkayOkay");
+        System.out.println("Déplacement bas");
         
     }
     
     public void gohaut(ActionEvent event){
-        System.out.println("OkayOkay");
+        System.out.println("Déplacement haut");
         
     }
 
